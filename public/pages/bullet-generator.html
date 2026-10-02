@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>AI Bullet Generator - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="resume-examples.html">CV Examples</a>
+    <a href="bullet-generator.html" class="active-nav">Bullet Generator</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="pricing.html">Pricing</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-bullet-section">
+
+  <div class="dashboard-hero">
+    <div>
+      <p class="insight-label">AI CV Bullet Generator</p>
+      <h1>Turn basic duties into strong CV achievements.</h1>
+      <p>
+        Write what you did in simple words. JobReady turns it into recruiter-ready,
+        ATS-friendly bullet points with stronger impact and clearer evidence.
+      </p>
+    </div>
+
+    <button class="dashboard-btn" id="generateTopBtn">
+      Generate Bullets
+    </button>
+  </div>
+
+  <div class="insight-panel">
+    <div>
+      <p class="insight-label">Weak Input</p>
+      <h2 id="inputQuality">0%</h2>
+    </div>
+
+    <div>
+      <p class="insight-label">Bullet Strength</p>
+      <h2 id="bulletStrength">0%</h2>
+    </div>
+
+    <div>
+      <p class="insight-label">ATS Keywords</p>
+      <h2 id="keywordCount">0</h2>
+    </div>
+  </div>
+
+  <div class="builder-container" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card">
+        <h3>Describe what you did</h3>
+        <p>Keep it rough. JobReady will make it sound professional without inventing fake experience.</p>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="targetRoleInput" placeholder="Retail Assistant, Data Analyst, Admin Assistant">
+        </div>
+
+        <div class="form-group">
+          <label>Experience / Duty</label>
+          <textarea id="dutyInput" placeholder="Example: worked at Tesco, helped customers, stocked shelves, used till..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Industry</label>
+          <input id="industryInput" placeholder="Retail, tech, finance, healthcare, admin">
+        </div>
+
+        <div class="form-group">
+          <label>Tone</label>
+          <select id="toneInput" class="status-select">
+            <option>Professional</option>
+            <option>Graduate</option>
+            <option>Apprenticeship</option>
+            <option>Senior</option>
+            <option>ATS Optimised</option>
+          </select>
+        </div>
+
+        <button class="generate-btn" id="generateBulletsBtn">
+          Generate Strong Bullets
+        </button>
+      </div>
+
+      <div class="panel-card">
+        <h3>Examples</h3>
+        <div class="template-selector">
+          <button class="template-pill example-duty">helped customers in a shop</button>
+          <button class="template-pill example-duty">used Excel to track data</button>
+          <button class="template-pill example-duty">answered phone calls and emails</button>
+          <button class="template-pill example-duty">worked in a team project</button>
+          <button class="template-pill example-duty">managed social media posts</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="panel-card">
+        <h3>Generated CV Bullets</h3>
+        <p>Use these in your experience section, then tailor them to the job advert.</p>
+
+        <div id="bulletsOutput" class="assistant-rich-text linkedin-output-box">
+          <p>No bullets generated yet.</p>
+        </div>
+
+        <div class="chat-actions" style="margin-top:20px;">
+          <button class="secondary-action-btn" id="copyBulletsBtn">
+            Copy Bullets
+          </button>
+
+          <button class="secondary-action-btn" id="sendToBuilderBtn">
+            Send To Builder
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Achievement Version</h3>
+        <div id="achievementOutput" class="linkedin-output-box">
+          <p>No achievement version yet.</p>
+        </div>
+
+        <button class="secondary-action-btn" id="copyAchievementBtn" style="margin-top:16px;">
+          Copy Achievement Version
+        </button>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Keywords To Add</h3>
+        <div id="keywordsOutput" class="keyword-chip-row">
+          <p>No keywords yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Saved Bullet Sets</h3>
+        <div id="savedBulletsList">
+          <p>Loading saved bullets...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/bullet-generator.js"></script>
+
+</body>
+
+</html>

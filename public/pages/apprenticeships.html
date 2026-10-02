@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apprenticeship Hub - JobReady</title>
+  <link rel="stylesheet" href="/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="interview-live.html">Live Interview</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="apprenticeships.html" class="active-nav">Apprenticeships</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-apprenticeship-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Apprenticeship & Graduate Hub</p>
+      <h1>Find openings. Understand requirements. Apply stronger.</h1>
+      <p>
+        Search real apprenticeship platforms, save opportunities, track deadlines,
+        and get AI advice on how to stand out.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="analyseOpportunityTopBtn">Analyse Opportunity</button>
+        <a href="https://www.gov.uk/apply-apprenticeship" target="_blank" rel="noopener noreferrer" class="secondary-btn">Search GOV.UK</a>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Opportunity Strength</p>
+      <h2 id="opportunityStrength">0%</h2>
+      <span>Application readiness</span>
+
+      <div class="career-score-bar">
+        <div id="opportunityStrengthBar"></div>
+      </div>
+
+      <p>Strong applications match requirements, prove motivation and show employer research.</p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Saved Opportunities</p>
+      <h2 id="savedCount">0</h2>
+      <span>Apprenticeships and schemes tracked</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Upcoming Deadlines</p>
+      <h2 id="deadlineCount">0</h2>
+      <span>Due within 30 days</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Best Match</p>
+      <h2 id="bestMatch">0%</h2>
+      <span>Your strongest opportunity</span>
+    </div>
+  </div>
+
+  <div class="panel-card apprenticeship-search-card">
+    <div class="chat-header-row">
+      <div>
+        <p class="insight-label">Real Opening Search</p>
+        <h3>Search live apprenticeship and early-career platforms</h3>
+        <p>Use these buttons to find real openings, then paste the role into JobReady for strategy.</p>
+      </div>
+    </div>
+
+    <div class="apprenticeship-source-grid">
+      <a href="https://www.gov.uk/apply-apprenticeship" target="_blank" rel="noopener noreferrer">GOV.UK Find an Apprenticeship</a>
+      <a href="https://www.ucas.com/explore/search/apprenticeships?query=" target="_blank" rel="noopener noreferrer">UCAS Apprenticeships</a>
+      <a href="https://www.getmyfirstjob.co.uk/" target="_blank" rel="noopener noreferrer">GetMyFirstJob</a>
+      <a href="https://uk.indeed.com/q-apprenticeships-jobs.html" target="_blank" rel="noopener noreferrer">Indeed Apprenticeships</a>
+      <a href="https://www.brightnetwork.co.uk/graduate-jobs/" target="_blank" rel="noopener noreferrer">Bright Network Graduate Jobs</a>
+      <a href="https://www.apprenticeships.gov.uk/apprentices/browse-apprenticeships" target="_blank" rel="noopener noreferrer">Browse Apprenticeships</a>
+    </div>
+  </div>
+
+  <div class="builder-container apprenticeship-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card apprenticeship-input-card">
+        <p class="insight-label">Opportunity Input</p>
+        <h3>Save and analyse an opportunity</h3>
+        <p>Paste the advert and JobReady will explain requirements, gaps and how to stand out.</p>
+
+        <div class="form-group">
+          <label>Opportunity Type</label>
+          <select id="typeInput" class="status-select">
+            <option>Apprenticeship</option>
+            <option>Degree Apprenticeship</option>
+            <option>Graduate Scheme</option>
+            <option>Internship</option>
+            <option>Work Experience</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Company / Provider</label>
+          <input id="companyInput" placeholder="NHS, BT, Barclays, KPMG, local employer">
+        </div>
+
+        <div class="form-group">
+          <label>Role Title</label>
+          <input id="roleInput" placeholder="Data Analyst Apprentice">
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <input id="locationInput" placeholder="London, Manchester, Remote">
+        </div>
+
+        <div class="form-group">
+          <label>Deadline</label>
+          <input id="deadlineInput" type="date">
+        </div>
+
+        <div class="form-group">
+          <label>Apply Link</label>
+          <input id="applyLinkInput" placeholder="https://...">
+        </div>
+
+        <div class="form-group">
+          <label>Requirements</label>
+          <textarea id="requirementsInput" placeholder="GCSEs, A-levels, skills, experience, eligibility..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Advert / Description</label>
+          <textarea id="descriptionInput" placeholder="Paste the full apprenticeship or graduate scheme advert here..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Your Background</label>
+          <textarea id="backgroundInput" placeholder="Your skills, grades, projects, work experience, interests..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="analyseOpportunityBtn">Analyse & Save</button>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="tailor-intelligence-grid">
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Requirement Match</p>
+          <h3 id="requirementMatch">0%</h3>
+          <span>How closely you fit</span>
+        </div>
+
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Priority</p>
+          <h3 id="priorityStatus">Find role</h3>
+          <span>What to improve first</span>
+        </div>
+      </div>
+
+      <div class="panel-card match-card">
+        <h3>AI Application Strategy</h3>
+        <p>Get requirements explained clearly, plus CV angle, cover letter angle and interview prep.</p>
+
+        <div id="strategyOutput" class="assistant-rich-text apprenticeship-output-box">
+          <p>No opportunity analysed yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>How To Stand Out</h3>
+        <div id="standoutOutput" class="linkedin-output-box">
+          <p>Analyse an opportunity to get standout advice.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Saved Opportunities</h3>
+        <div id="opportunityList">
+          <p>Loading opportunities...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/apprenticeships.js"></script>
+
+</body>
+</html>

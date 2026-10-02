@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>AI Interview Simulator - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="interview-simulator.html" class="active-nav">Interview Simulator</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-interview-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">AI Interview Simulator</p>
+
+      <h1>Practise like it is the real interview.</h1>
+
+      <p>
+        Generate role-specific interview questions, answer under pressure,
+        and receive strict recruiter-style scoring with STAR, clarity and confidence feedback.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="generateQuestionBtn">Generate Question</button>
+        <button class="secondary-btn" id="resetSessionBtn">Reset Session</button>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Interview Readiness</p>
+      <h2 id="bestInterviewScore">0%</h2>
+      <span>Best saved performance</span>
+
+      <div class="career-score-bar">
+        <div id="interviewReadinessBar"></div>
+      </div>
+
+      <p>
+        Improve by using STAR evidence, measurable impact and clearer role-specific examples.
+      </p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Sessions</p>
+      <h2 id="sessionCount">0</h2>
+      <span>Saved interview attempts</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Average Score</p>
+      <h2 id="averageScore">0%</h2>
+      <span>Your overall interview quality</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Latest Signal</p>
+      <h2 id="latestSignal">-</h2>
+      <span>Most recent recruiter verdict</span>
+    </div>
+  </div>
+
+  <div class="career-score-breakdown-grid">
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">STAR Score</p>
+      <h2 id="starScore">0%</h2>
+      <div class="mini-progress"><div id="starScoreBar"></div></div>
+      <span>Situation, Task, Action, Result</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Confidence</p>
+      <h2 id="confidenceScore">0%</h2>
+      <div class="mini-progress"><div id="confidenceScoreBar"></div></div>
+      <span>Specific, direct and credible answer</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Clarity</p>
+      <h2 id="clarityScore">0%</h2>
+      <div class="mini-progress"><div id="clarityScoreBar"></div></div>
+      <span>Clear structure and concise wording</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Role Match</p>
+      <h2 id="roleMatchScore">0%</h2>
+      <div class="mini-progress"><div id="roleMatchScoreBar"></div></div>
+      <span>Answer connects to the target role</span>
+    </div>
+
+  </div>
+
+  <div class="builder-container interview-simulator-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card interview-setup-card">
+        <p class="insight-label">Interview Setup</p>
+        <h3>Build your mock interview</h3>
+        <p>Choose your role, interview style and difficulty level.</p>
+
+        <div class="form-group">
+          <label>Job Title</label>
+          <input id="jobTitleInput" placeholder="Software Engineer, Data Analyst, Marketing Assistant">
+        </div>
+
+        <div class="form-group">
+          <label>Interview Type</label>
+          <select id="interviewTypeInput" class="status-select">
+            <option>Behavioural</option>
+            <option>Competency</option>
+            <option>Technical</option>
+            <option>Graduate</option>
+            <option>Apprenticeship</option>
+            <option>Career Switcher</option>
+            <option>Leadership</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Difficulty</label>
+          <select id="difficultyInput" class="status-select">
+            <option>Easy</option>
+            <option selected>Realistic</option>
+            <option>Hard</option>
+            <option>Pressure Mode</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Extra Context</label>
+          <textarea id="contextInput" placeholder="Paste a job advert, your skills, experience, projects or anything the interviewer should know..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="generateQuestionBtnSide">
+          Generate Interview Question
+        </button>
+      </div>
+
+      <div class="panel-card interview-device-card">
+        <h3>Camera & Mic Readiness</h3>
+        <p>Use this before a real video interview.</p>
+
+        <div class="device-status-list">
+          <p><strong>Camera:</strong> <span id="cameraStatus">Not checked</span></p>
+          <p><strong>Microphone:</strong> <span id="microphoneStatus">Not checked</span></p>
+        </div>
+
+        <video id="cameraPreview" class="camera-preview" autoplay muted playsinline style="display:none;"></video>
+
+        <button class="secondary-action-btn" id="checkDeviceBtn">
+          Check Camera & Mic
+        </button>
+
+        <button class="secondary-action-btn" id="stopDeviceBtn" style="display:none; margin-top:12px;">
+          Stop Camera
+        </button>
+      </div>
+
+      <div class="panel-card interview-coach-card">
+        <h3>How to score higher</h3>
+
+        <div class="interview-tip-list">
+          <p><strong>Use STAR:</strong> Situation, Task, Action, Result.</p>
+          <p><strong>Add evidence:</strong> numbers, outcomes, responsibilities.</p>
+          <p><strong>Match the role:</strong> mention skills from the job advert.</p>
+          <p><strong>Be concise:</strong> clear answer, no rambling.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="panel-card interview-main-card">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Current Interview Question</p>
+            <h3>Answer as if you are speaking to a real recruiter</h3>
+          </div>
+
+          <span class="product-status-pill" id="difficultyBadge">Realistic</span>
+        </div>
+
+        <div id="questionOutput" class="question-card assistant-message-card interview-question-box">
+          <h4>Interviewer</h4>
+          <p>Generate a question to begin your mock interview.</p>
+        </div>
+
+        <div class="form-group">
+          <label>Your Answer</label>
+          <textarea id="answerInput" placeholder="Type your interview answer here. Try using the STAR method and include specific evidence..."></textarea>
+        </div>
+
+        <div class="answer-helper-row">
+          <button class="secondary-action-btn" id="insertStarBtn">Insert STAR Structure</button>
+          <button class="secondary-action-btn" id="copyQuestionBtn">Copy Question</button>
+        </div>
+
+        <button class="generate-btn" id="submitAnswerBtn">
+          Submit Answer For Feedback
+        </button>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Recruiter Feedback</h3>
+
+        <div id="feedbackOutput" class="assistant-rich-text interview-feedback-box">
+          <p>No feedback yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Interview History</h3>
+
+        <div id="historyList">
+          <p>Loading history...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/interview-simulator.js"></script>
+
+</body>
+
+</html>
+</html>

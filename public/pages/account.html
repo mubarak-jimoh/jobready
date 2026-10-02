@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Account - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">JobReady</div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="builder.html">Builder</a>
+      <a href="templates.html">Templates</a>
+      <a href="my-cvs.html">My CVs</a>
+      <a href="cover-letters.html">Cover Letters</a>
+      <a href="interview.html">Interview Prep</a>
+      <a href="salary.html">Salary Path</a>
+      <a href="career-assistant.html">AI Assistant</a>
+      <a href="learning-roadmap.html">Learning Roadmap</a>
+      <a href="account.html" class="active-nav">Account</a>
+    </div>
+  </nav>
+
+  <section class="dashboard-section">
+
+    <div class="dashboard-header">
+      <div>
+        <h1>Account & Usage</h1>
+        <p>Manage your JobReady subscription, billing, and AI usage.</p>
+      </div>
+
+      <button id="logoutBtn" class="dashboard-btn logout-btn">
+        Logout
+      </button>
+    </div>
+
+    <div class="dashboard-grid">
+
+      <div class="dashboard-card">
+        <p class="insight-label">Current Plan</p>
+
+        <h2 id="planStatus">Loading...</h2>
+
+        <p id="planDescription">Checking subscription...</p>
+
+        <button id="upgradeBtn" class="generate-btn">
+          Upgrade to Premium
+        </button>
+
+        <button id="billingBtn" class="ai-btn">
+          Manage Billing
+        </button>
+      </div>
+
+      <div class="dashboard-card">
+        <p class="insight-label">Monthly AI Usage</p>
+
+        <div id="usageContainer">
+
+          <div class="usage-row">
+            <span>AI Rewrite</span>
+            <strong id="rewriteUsage">-</strong>
+          </div>
+
+          <div class="usage-row">
+            <span>Humaniser</span>
+            <strong id="humaniseUsage">-</strong>
+          </div>
+
+          <div class="usage-row">
+            <span>Cover Letters</span>
+            <strong id="coverUsage">-</strong>
+          </div>
+
+          <div class="usage-row">
+            <span>Interview Prep</span>
+            <strong id="interviewUsage">-</strong>
+          </div>
+
+          <div class="usage-row">
+            <span>Career Coach</span>
+            <strong id="coachUsage">-</strong>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/account.js"></script>
+
+</body>
+
+</html>

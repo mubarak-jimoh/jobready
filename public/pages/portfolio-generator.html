@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Portfolio Generator - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="my-cvs.html">My CVs</a>
+    <a href="cover-letters.html">Cover Letters</a>
+    <a href="interview.html">Interview Prep</a>
+    <a href="salary.html">Salary Path</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="learning-roadmap.html">Learning Roadmap</a>
+    <a href="linkedin-optimiser.html">LinkedIn Optimiser</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="job-search-assistant.html">Job Search</a>
+    <a href="recruiter-crm.html">Recruiter CRM</a>
+    <a href="portfolio-generator.html" class="active-nav">Portfolio Generator</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section">
+
+  <div class="dashboard-header">
+    <div>
+      <h1>AI Portfolio Generator</h1>
+      <p>Generate portfolio project ideas that prove your skills and help you stand out to employers.</p>
+    </div>
+  </div>
+
+  <div class="builder-container" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card">
+        <h3>Create Portfolio Plan</h3>
+        <p>Tell JobReady your target role and skills. It will generate realistic project ideas.</p>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="targetRoleInput" placeholder="Data Analyst, Software Engineer, Cybersecurity Analyst">
+        </div>
+
+        <div class="form-group">
+          <label>Experience Level</label>
+          <select id="experienceLevelInput" class="status-select">
+            <option>Beginner</option>
+            <option>Student</option>
+            <option>Graduate</option>
+            <option>Career switcher</option>
+            <option>Junior</option>
+            <option>Mid-level</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Skills</label>
+          <textarea id="skillsInput" placeholder="Python, Excel, JavaScript, SQL, Figma, customer research..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Industry / Interest</label>
+          <input id="industryInput" placeholder="Finance, healthcare, retail, gaming, education">
+        </div>
+
+        <button class="generate-btn" id="generatePortfolioBtn">
+          Generate Portfolio Projects
+        </button>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="panel-card">
+        <h3>Your Portfolio Plan</h3>
+        <p>Project ideas, build steps and CV/LinkedIn positioning will appear here.</p>
+
+        <div id="portfolioOutput" class="assistant-rich-text">
+          <p>No portfolio plan generated yet.</p>
+        </div>
+
+        <div class="chat-actions" style="margin-top:20px;">
+          <button class="secondary-action-btn" id="copyPortfolioBtn">
+            Copy Portfolio Plan
+          </button>
+
+          <button class="secondary-action-btn" id="exportPortfolioBtn">
+            Export Text
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Saved Portfolio Plans</h3>
+        <div id="savedPortfolioPlans">
+          <p>Loading saved plans...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/portfolio-generator.js"></script>
+
+</body>
+</html>

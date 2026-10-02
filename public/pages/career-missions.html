@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Career Missions - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="career-missions.html" class="active-nav">Missions</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section">
+
+  <div class="dashboard-hero">
+    <div>
+      <p class="insight-label">Weekly Career Missions</p>
+      <h1>Build momentum every week</h1>
+      <p>
+        Complete focused career missions to improve your CV, applications,
+        LinkedIn, recruiter outreach and interview readiness.
+      </p>
+    </div>
+
+    <button class="dashboard-btn" id="generateMissionsBtn">
+      Generate Missions
+    </button>
+  </div>
+
+  <div class="insight-panel">
+    <div>
+      <p class="insight-label">Active Missions</p>
+      <h2 id="activeMissionCount">0</h2>
+    </div>
+
+    <div>
+      <p class="insight-label">Completed</p>
+      <h2 id="completedMissionCount">0</h2>
+    </div>
+
+    <div>
+      <p class="insight-label">Progress</p>
+      <h2 id="missionProgress">0%</h2>
+    </div>
+  </div>
+
+  <div class="panel-card">
+    <h3>Your Weekly Missions</h3>
+    <p>These missions are designed to keep you moving towards better jobs.</p>
+
+    <div id="missionsList">
+      <p>Loading missions...</p>
+    </div>
+  </div>
+
+</section>
+
+<script type="module" src="/js/career-missions.js"></script>
+
+</body>
+
+</html>

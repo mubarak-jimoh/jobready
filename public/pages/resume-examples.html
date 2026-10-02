@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>CV Examples - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="resume-examples.html" class="active-nav">CV Examples</a>
+    <a href="resume-upload.html">Upload CV</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="cover-letter-templates.html">Cover Letters</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="pricing.html">Pricing</a>
+  </div>
+
+  <a href="signup.html" class="nav-btn">Start Free</a>
+</nav>
+
+<section class="dashboard-section premium-examples-section">
+
+  <div class="template-page-hero elite-template-hero">
+    <div>
+      <p class="insight-label">Premium CV Examples Library</p>
+
+      <h1>Start from CV examples built for real career paths.</h1>
+
+      <p>
+        Browse role-specific CV examples across technology, healthcare, education,
+        finance, legal, retail, hospitality, engineering, business and more.
+        Use an example, send it to Builder and tailor it with JobReady AI.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="builder.html" class="primary-btn">Open Builder</a>
+        <a href="templates.html" class="secondary-btn">Browse Templates</a>
+      </div>
+    </div>
+
+    <div class="template-hero-preview-stack">
+      <div class="floating-template-card floating-template-card-one">
+        <h3>Data Analyst</h3>
+        <span>ATS 91%</span>
+        <div></div><div></div><div></div>
+      </div>
+
+      <div class="floating-template-card floating-template-card-two">
+        <h3>Healthcare Assistant</h3>
+        <span>Care-ready</span>
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div>
+      <strong>20+ examples</strong>
+      <span>Across major job industries</span>
+    </div>
+
+    <div>
+      <strong>ATS keywords</strong>
+      <span>Skills recruiters scan for</span>
+    </div>
+
+    <div>
+      <strong>Recruiter notes</strong>
+      <span>Why each example works</span>
+    </div>
+
+    <div>
+      <strong>1-click start</strong>
+      <span>Use examples inside Builder</span>
+    </div>
+  </div>
+
+  <div class="examples-command-centre">
+    <div class="examples-command-card examples-primary-card">
+      <p class="insight-label">Recommended Starting Point</p>
+      <h2>Not sure what to write?</h2>
+      <p>
+        Choose the example closest to your target role, send it to Builder,
+        then personalise it with JobReady AI and job matching.
+      </p>
+
+      <div class="resource-stat-row">
+        <div>
+          <strong>20+</strong>
+          <span>Role examples</span>
+        </div>
+
+        <div>
+          <strong>ATS</strong>
+          <span>Keyword-led</span>
+        </div>
+      </div>
+
+      <a href="builder.html" class="dashboard-btn">
+        Start From Builder
+      </a>
+    </div>
+
+    <div class="examples-command-card">
+      <p class="insight-label">No Experience?</p>
+      <h3>Use starter examples</h3>
+      <p>
+        Apprenticeship, school leaver, retail and graduate examples help you show potential properly.
+      </p>
+    </div>
+
+    <div class="examples-command-card">
+      <p class="insight-label">Changing Industry?</p>
+      <h3>Show transferable skills</h3>
+      <p>
+        Career switch examples focus on projects, strengths and proof instead of vague claims.
+      </p>
+    </div>
+  </div>
+
+  <div class="panel-card template-control-panel">
+    <div class="chat-header-row">
+      <div>
+        <p class="insight-label">Example Finder</p>
+        <h3>Search by role, industry or experience level</h3>
+        <p>Find a strong starting point before writing from scratch.</p>
+      </div>
+
+      <a href="resume-upload.html" class="dashboard-btn">Upload Existing CV</a>
+    </div>
+
+    <div class="template-filter-row">
+      <input
+        id="exampleSearchInput"
+        class="template-search-input"
+        placeholder="Search examples: data, admin, NHS, retail, legal, finance, engineering..."
+      >
+
+      <div class="template-filter-pills">
+        <button class="template-filter active-filter" data-filter="all">All</button>
+        <button class="template-filter" data-filter="tech">Technology</button>
+        <button class="template-filter" data-filter="business">Business</button>
+        <button class="template-filter" data-filter="finance">Finance</button>
+        <button class="template-filter" data-filter="healthcare">Healthcare</button>
+        <button class="template-filter" data-filter="education">Education</button>
+        <button class="template-filter" data-filter="service">Service</button>
+        <button class="template-filter" data-filter="skilled">Skilled Work</button>
+        <button class="template-filter" data-filter="starter">Starter</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-section-title">
+    <h2>Professional CV examples</h2>
+    <p>Choose a role-specific example, review why it works, then use it as a base inside JobReady.</p>
+  </div>
+
+  <div class="cv-grid premium-example-grid" id="examplesGrid">
+
+    <div class="panel-card template-choice resume-example-card" data-category="tech data business">
+      <div class="template-meta-row">
+        <span>ATS 91%</span>
+        <span>Technology</span>
+      </div>
+      <p class="insight-label">Technology</p>
+      <h3>Data Analyst CV Example</h3>
+      <p>Built around Excel, SQL, Power BI, dashboards, reporting and insight projects.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Strong technical keywords</li>
+        <li>Clear project evidence</li>
+        <li>Good fit for junior analyst roles</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="tech software">
+      <div class="template-meta-row">
+        <span>ATS 89%</span>
+        <span>Technology</span>
+      </div>
+      <p class="insight-label">Technology</p>
+      <h3>Software Developer CV Example</h3>
+      <p>For JavaScript, React, APIs, Git, portfolio projects and problem solving.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Project-led structure</li>
+        <li>Technical stack is easy to scan</li>
+        <li>Shows build evidence</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="tech support">
+      <div class="template-meta-row">
+        <span>ATS 87%</span>
+        <span>IT Support</span>
+      </div>
+      <p class="insight-label">Technology</p>
+      <h3>IT Support CV Example</h3>
+      <p>For helpdesk, troubleshooting, networking, ticketing and customer support roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Balances people and technical skills</li>
+        <li>Highlights troubleshooting</li>
+        <li>Clear entry-level route</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="business management">
+      <div class="template-meta-row">
+        <span>ATS 88%</span>
+        <span>Business</span>
+      </div>
+      <p class="insight-label">Business</p>
+      <h3>Business Analyst CV Example</h3>
+      <p>For requirements, stakeholder communication, process mapping and documentation.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Strong business language</li>
+        <li>Clear stakeholder value</li>
+        <li>Process-focused evidence</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="finance accounting">
+      <div class="template-meta-row">
+        <span>ATS 90%</span>
+        <span>Finance</span>
+      </div>
+      <p class="insight-label">Finance</p>
+      <h3>Finance Assistant CV Example</h3>
+      <p>For Excel, reconciliation, reporting, invoices, accuracy and finance admin roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Accuracy and detail are clear</li>
+        <li>Finance keywords included</li>
+        <li>Good for entry finance roles</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="finance accounting">
+      <div class="template-meta-row">
+        <span>ATS 92%</span>
+        <span>Accounting</span>
+      </div>
+      <p class="insight-label">Accounting</p>
+      <h3>Accountant CV Example</h3>
+      <p>For bookkeeping, accounts, tax support, reporting, compliance and financial records.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Professional finance tone</li>
+        <li>Strong compliance focus</li>
+        <li>Clear technical evidence</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="healthcare medical">
+      <div class="template-meta-row">
+        <span>ATS 88%</span>
+        <span>Healthcare</span>
+      </div>
+      <p class="insight-label">Healthcare</p>
+      <h3>NHS Administrator CV Example</h3>
+      <p>For patient records, confidentiality, admin, communication and appointment support.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>NHS-relevant keywords</li>
+        <li>Clear confidentiality focus</li>
+        <li>Strong admin structure</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="healthcare medical service">
+      <div class="template-meta-row">
+        <span>ATS 86%</span>
+        <span>Care</span>
+      </div>
+      <p class="insight-label">Healthcare</p>
+      <h3>Healthcare Assistant CV Example</h3>
+      <p>For care, support work, communication, safeguarding and patient-facing roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Care values are clear</li>
+        <li>Safeguarding language included</li>
+        <li>Good for entry care roles</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="education starter">
+      <div class="template-meta-row">
+        <span>ATS 85%</span>
+        <span>Education</span>
+      </div>
+      <p class="insight-label">Education</p>
+      <h3>Teaching Assistant CV Example</h3>
+      <p>For classroom support, safeguarding, communication and student development roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Education terminology</li>
+        <li>Supportive tone</li>
+        <li>Strong transferable skills</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="service retail customer">
+      <div class="template-meta-row">
+        <span>ATS 86%</span>
+        <span>Retail</span>
+      </div>
+      <p class="insight-label">Retail</p>
+      <h3>Retail Assistant CV Example</h3>
+      <p>For customer service, stock, tills, teamwork, reliability and store operations.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Clear customer service focus</li>
+        <li>Strong entry-level structure</li>
+        <li>Easy for recruiters to scan</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="service customer">
+      <div class="template-meta-row">
+        <span>ATS 87%</span>
+        <span>Customer Service</span>
+      </div>
+      <p class="insight-label">Customer Service</p>
+      <h3>Customer Service Advisor CV Example</h3>
+      <p>For complaints, CRM, communication, service quality and query handling roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Strong people skills</li>
+        <li>Problem-solving focus</li>
+        <li>Good call centre fit</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="service hospitality catering">
+      <div class="template-meta-row">
+        <span>ATS 84%</span>
+        <span>Hospitality</span>
+      </div>
+      <p class="insight-label">Hospitality</p>
+      <h3>Hospitality CV Example</h3>
+      <p>For restaurant, hotel, catering, kitchen and front-of-house roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Service and speed are clear</li>
+        <li>Teamwork is highlighted</li>
+        <li>Good for flexible roles</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="skilled engineering">
+      <div class="template-meta-row">
+        <span>ATS 89%</span>
+        <span>Engineering</span>
+      </div>
+      <p class="insight-label">Engineering</p>
+      <h3>Engineering CV Example</h3>
+      <p>For mechanical, electrical, civil, technical and project engineering roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Technical evidence is clear</li>
+        <li>Safety and standards included</li>
+        <li>Project-focused structure</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="skilled maintenance repair">
+      <div class="template-meta-row">
+        <span>ATS 85%</span>
+        <span>Maintenance</span>
+      </div>
+      <p class="insight-label">Skilled Work</p>
+      <h3>Maintenance Technician CV Example</h3>
+      <p>For repairs, facilities, diagnostics, safety and hands-on technical work.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Practical skills are clear</li>
+        <li>Safety focus included</li>
+        <li>Good for trades and technician roles</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="business legal professional">
+      <div class="template-meta-row">
+        <span>ATS 88%</span>
+        <span>Legal</span>
+      </div>
+      <p class="insight-label">Legal</p>
+      <h3>Legal Assistant CV Example</h3>
+      <p>For law graduates, legal admin, paralegal support, research and compliance roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Professional tone</li>
+        <li>Research and accuracy focus</li>
+        <li>Strong legal admin keywords</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="business human resources">
+      <div class="template-meta-row">
+        <span>ATS 86%</span>
+        <span>HR</span>
+      </div>
+      <p class="insight-label">Human Resources</p>
+      <h3>HR Assistant CV Example</h3>
+      <p>For recruitment, onboarding, employee records, HR admin and people support.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>People operations focus</li>
+        <li>Confidentiality included</li>
+        <li>Good HR admin structure</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="business marketing creative">
+      <div class="template-meta-row">
+        <span>ATS 87%</span>
+        <span>Marketing</span>
+      </div>
+      <p class="insight-label">Marketing</p>
+      <h3>Marketing Assistant CV Example</h3>
+      <p>For social media, campaigns, content, analytics, branding and digital marketing roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Creative and analytical balance</li>
+        <li>Campaign language included</li>
+        <li>Good for junior marketing roles</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="starter graduate">
+      <div class="template-meta-row">
+        <span>ATS 84%</span>
+        <span>Graduate</span>
+      </div>
+      <p class="insight-label">Graduate</p>
+      <h3>Graduate CV Example</h3>
+      <p>For graduate schemes, internships, placements and first professional roles.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Education is positioned well</li>
+        <li>Projects support lack of experience</li>
+        <li>Strong potential-led structure</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+    <div class="panel-card template-choice resume-example-card" data-category="starter apprenticeship">
+      <div class="template-meta-row">
+        <span>ATS 83%</span>
+        <span>Apprenticeship</span>
+      </div>
+      <p class="insight-label">Starter</p>
+      <h3>Apprenticeship CV Example</h3>
+      <p>For school leavers, college students and first career opportunities.</p>
+      <h4>Why it works</h4>
+      <ul>
+        <li>Beginner-friendly</li>
+        <li>Focuses on motivation</li>
+        <li>Highlights transferable skills</li>
+      </ul>
+      <a href="builder.html" class="dashboard-btn">Use This Example</a>
+    </div>
+
+  </div>
+
+  <div class="template-upgrade-panel">
+    <div>
+      <p class="insight-label">Use examples properly</p>
+      <h2>Examples are the starting point. Tailoring is what gets interviews.</h2>
+      <p>
+        Start with a role example, send it to Builder, then use Job Match to align your CV
+        with a real job advert before applying.
+      </p>
+    </div>
+
+    <a href="resume-tailor.html" class="dashboard-btn">Tailor Your CV</a>
+  </div>
+
+</section>
+
+<script src="/js/resume-examples-search.js"></script>
+
+<script src="/js/live-premium.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Recruiter CRM - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="application-assistant.html">Application Assistant</a>
+    <a href="interview-live.html">Live Interview</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="linkedin-optimiser.html">LinkedIn Optimiser</a>
+    <a href="recruiter-crm.html" class="active-nav">Recruiter CRM</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-recruiter-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Recruiter Outreach Engine</p>
+
+      <h1>Stop only applying. Start building recruiter relationships.</h1>
+
+      <p>
+        Save recruiters, track follow-ups and generate professional outreach messages
+        for email, LinkedIn and referral conversations.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="generateMessageTopBtn">Generate Outreach</button>
+        <a href="job-tracker.html" class="secondary-btn">Open Job Tracker</a>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Network Strength</p>
+      <h2 id="networkStrength">0%</h2>
+      <span>Recruiter pipeline quality</span>
+
+      <div class="career-score-bar">
+        <div id="networkStrengthBar"></div>
+      </div>
+
+      <p>
+        Strong job seekers do more than apply — they build conversations with the right people.
+      </p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Contacts</p>
+      <h2 id="totalContacts">0</h2>
+      <span>Recruiters and hiring contacts</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Due Follow Ups</p>
+      <h2 id="followUps">0</h2>
+      <span>Follow-ups due soon</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Warm Leads</p>
+      <h2 id="warmLeads">0</h2>
+      <span>Contacts showing progress</span>
+    </div>
+  </div>
+
+  <div class="builder-container recruiter-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card recruiter-input-card">
+        <p class="insight-label">Contact Manager</p>
+        <h3>Add Recruiter Contact</h3>
+        <p>Track recruiters, hiring managers, mentors and useful industry contacts.</p>
+
+        <div class="form-group">
+          <label>Name</label>
+          <input id="nameInput" placeholder="Recruiter name">
+        </div>
+
+        <div class="form-group">
+          <label>Company</label>
+          <input id="companyInput" placeholder="Company name">
+        </div>
+
+        <div class="form-group">
+          <label>Role / Focus</label>
+          <input id="roleInput" placeholder="Recruiter, Hiring Manager, Data roles, Apprenticeships">
+        </div>
+
+        <div class="form-group">
+          <label>LinkedIn URL</label>
+          <input id="linkedinInput" placeholder="https://linkedin.com/in/...">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input id="emailInput" placeholder="name@company.com">
+        </div>
+
+        <div class="form-group">
+          <label>Status</label>
+          <select id="statusInput" class="status-select">
+            <option>New</option>
+            <option>Contacted</option>
+            <option>Replied</option>
+            <option>Warm Lead</option>
+            <option>Interviewing</option>
+            <option>Closed</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Follow-up Date</label>
+          <input id="followUpInput" type="date">
+        </div>
+
+        <div class="form-group">
+          <label>Notes</label>
+          <textarea id="notesInput" placeholder="What role are they hiring for? What did they say? What should you mention?"></textarea>
+        </div>
+
+        <button class="generate-btn" id="saveContactBtn">
+          Save Contact
+        </button>
+
+        <button class="secondary-action-btn" id="generateMessageBtn" style="margin-top:12px;">
+          Generate Outreach Message
+        </button>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="tailor-intelligence-grid">
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Pipeline Stage</p>
+          <h3 id="pipelineStage">New</h3>
+          <span>Current contact status</span>
+        </div>
+
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Next Action</p>
+          <h3 id="nextAction">Add contact</h3>
+          <span>Recommended outreach step</span>
+        </div>
+      </div>
+
+      <div class="panel-card recruiter-output-card">
+        <h3>AI Outreach Message</h3>
+        <p>Generate LinkedIn, email and follow-up messages that sound professional, not desperate.</p>
+
+        <div id="messageOutput" class="assistant-rich-text recruiter-output-box">
+          <p>No outreach message generated yet.</p>
+        </div>
+
+        <div class="chat-actions" style="margin-top:20px;">
+          <button class="secondary-action-btn" id="copyMessageBtn">
+            Copy Message
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Saved Contacts</h3>
+
+        <div id="contactsList">
+          <p>Loading contacts...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/recruiter-crm.js"></script>
+
+</body>
+</html>

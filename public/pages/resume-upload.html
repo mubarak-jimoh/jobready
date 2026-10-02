@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Upload CV - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="resume-upload.html" class="active-nav">Upload CV</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="application-assistant.html">Application Assistant</a>
+    <a href="interview-live.html">Live Interview</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="pricing.html">Pricing</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-upload-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">CV Upload + AI Import</p>
+
+      <h1>Upload your existing CV and rebuild it instantly.</h1>
+
+      <p>
+        Upload a PDF, Word document or text CV. JobReady extracts the content,
+        checks weak areas and sends it into the premium CV builder.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="uploadTopBtn">Choose CV File</button>
+        <a href="builder.html" class="secondary-btn">Open Builder</a>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Import Quality</p>
+      <h2 id="importScore">0%</h2>
+      <span id="importScoreLabel">No CV imported</span>
+
+      <div class="career-score-bar">
+        <div id="importScoreBar"></div>
+      </div>
+
+      <p id="importScoreAdvice">
+        Better imports include summary, skills, experience, education, projects and measurable achievements.
+      </p>
+    </div>
+  </div>
+
+  <div class="career-score-breakdown-grid">
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Structure</p>
+      <h2 id="structureScore">0%</h2>
+      <div class="mini-progress"><div id="structureBar"></div></div>
+      <span>Name, role, sections and formatting</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">ATS Readiness</p>
+      <h2 id="atsReadinessScore">0%</h2>
+      <div class="mini-progress"><div id="atsReadinessBar"></div></div>
+      <span>Skills, keywords and clean wording</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Proof Strength</p>
+      <h2 id="proofStrengthScore">0%</h2>
+      <div class="mini-progress"><div id="proofStrengthBar"></div></div>
+      <span>Projects, numbers and achievements</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Builder Ready</p>
+      <h2 id="builderReadyScore">0%</h2>
+      <div class="mini-progress"><div id="builderReadyBar"></div></div>
+      <span>Ready to import into Builder</span>
+    </div>
+
+  </div>
+
+  <div class="builder-container upload-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card upload-card">
+        <p class="insight-label">Upload CV</p>
+        <h3>Import your current resume</h3>
+        <p>Supported: PDF, DOC, DOCX and TXT files.</p>
+
+        <div class="upload-drop-zone" id="dropZone">
+          <input id="cvFileInput" type="file" accept=".pdf,.doc,.docx,.txt" hidden>
+          <div class="upload-icon">⬆</div>
+          <h3>Drop your CV here</h3>
+          <p>or click to choose a file</p>
+          <span id="fileNameDisplay">No file selected</span>
+        </div>
+
+        <button class="generate-btn" id="analyseCvBtn">
+          Analyse & Import CV
+        </button>
+
+        <button class="secondary-action-btn" id="sendToBuilderBtn" style="margin-top:12px;" disabled>
+          Send To Builder
+        </button>
+
+        <button class="secondary-action-btn" id="copyImportBtn" style="margin-top:12px;" disabled>
+          Copy Imported CV
+        </button>
+      </div>
+
+      <div class="panel-card">
+        <h3>What JobReady extracts</h3>
+
+        <div class="interview-tip-list">
+          <p><strong>Name:</strong> detected from the CV heading.</p>
+          <p><strong>Target role:</strong> inferred from title or experience.</p>
+          <p><strong>Summary:</strong> rewritten into a clean professional profile.</p>
+          <p><strong>Skills:</strong> extracted and cleaned for ATS.</p>
+          <p><strong>Experience:</strong> organised into recruiter-friendly wording.</p>
+          <p><strong>Education:</strong> kept clear and application-ready.</p>
+          <p><strong>Projects:</strong> imported where available.</p>
+          <p><strong>Certifications:</strong> captured for proof and credibility.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="insight-panel">
+        <div>
+          <p class="insight-label">Detected Name</p>
+          <h2 id="detectedName">-</h2>
+        </div>
+
+        <div>
+          <p class="insight-label">Detected Role</p>
+          <h2 id="detectedRole">-</h2>
+        </div>
+
+        <div>
+          <p class="insight-label">Status</p>
+          <p id="importStatus">Upload a CV to begin.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Import Diagnostics</h3>
+
+        <div id="importDiagnostics" class="builder-intelligence-output">
+          <p>No diagnostics yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Imported CV Preview</h3>
+
+        <div id="importOutput" class="assistant-rich-text upload-output-box">
+          <p>No CV imported yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Upload History</h3>
+
+        <div id="uploadHistoryList">
+          <p>Loading upload history...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/resume-upload.js"></script>
+
+</body>
+
+</html>

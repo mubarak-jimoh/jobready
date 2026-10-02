@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>JobReady Builder</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lato:wght@400;700;900&family=Poppins:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html" class="active-nav">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="my-cvs.html">My CVs</a>
+    <a href="resume-upload.html">Upload CV</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="application-assistant.html">Application Assistant</a>
+    <a href="interview-live.html">Live Interview</a>
+    <a href="salary.html">Salary Path</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="pricing.html">Pricing</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="builder-container premium-builder-shell recruiter-grade-builder">
+
+  <div class="builder-left">
+
+    <div class="panel-card builder-command-card builder-hero-card">
+      <p class="insight-label">AI CV Builder</p>
+
+      <h2>Build a CV that looks like it came from a professional CV writer.</h2>
+
+      <p>
+        Create a recruiter-ready CV with premium templates, live scoring,
+        job matching, recruiter review, one-click CV fixing, section control and clean export options.
+      </p>
+
+      <div class="builder-mini-trust-row">
+        <span>ATS-safe layouts</span>
+        <span>Recruiter-style sections</span>
+        <span>PDF & Word export</span>
+      </div>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input id="nameInput" type="text" placeholder="John Smith">
+      </div>
+
+      <div class="form-group">
+        <label>Target Job Title</label>
+        <input id="jobInput" type="text" placeholder="Junior Data Analyst">
+      </div>
+
+      <div class="form-group">
+        <label>Professional Summary</label>
+        <textarea id="summaryInput" placeholder="Write a focused 3-5 line summary showing your target role, key skills, strengths and career direction..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Core Skills</label>
+        <textarea id="skillsInput" placeholder="Excel, SQL, Power BI, Data Analysis, Communication, Problem Solving, Attention to Detail..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Experience</label>
+        <textarea id="experienceInput" placeholder="Add work experience, placements, responsibilities, achievements, part-time jobs or practical experience..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Education</label>
+        <textarea id="educationInput" placeholder="Digital T Level, A Levels, GCSEs, university, bootcamp or qualifications..."></textarea>
+      </div>
+
+      <details class="builder-extra-details" open>
+        <summary>Extra CV Sections</summary>
+
+        <div class="form-group">
+          <label>Projects</label>
+          <textarea id="projectsInput" placeholder="Portfolio projects, coursework, dashboards, websites, case studies, apps or business projects..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Certifications</label>
+          <textarea id="certificationsInput" placeholder="Google Career Certificate, CompTIA, Microsoft, freeCodeCamp, Coursera, LinkedIn Learning..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Volunteer Experience</label>
+          <textarea id="volunteerInput" placeholder="Volunteering, mentoring, community work, leadership or charity experience..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Languages</label>
+          <textarea id="languagesInput" placeholder="English, Arabic, French..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Links</label>
+          <textarea id="linksInput" placeholder="LinkedIn, GitHub, portfolio, website, Behance, Kaggle..."></textarea>
+        </div>
+      </details>
+
+      <div class="builder-actions">
+        <button class="generate-btn" id="saveCvBtn">Save CV</button>
+        <button class="ai-btn" id="improveAiBtn">✨ Fix My CV</button>
+        <button class="humanise-btn" id="humaniseBtn">🧠 Humanise CV</button>
+        <button class="secondary-action-btn" id="recruiterModeBtn">🕵️ Recruiter Mode</button>
+        <button class="secondary-action-btn" id="advancedScoreBtn">Advanced CV Score</button>
+        <button class="export-btn" id="downloadPdfBtn">Download PDF</button>
+        <button class="export-btn" id="downloadWordBtn">Download Word</button>
+      </div>
+    </div>
+
+    <div class="panel-card builder-studio-card">
+      <p class="insight-label">Builder Studio 2.0</p>
+      <h3>Design Studio</h3>
+      <p>Control the typography, spacing and structure so your CV looks clean, serious and employer-ready.</p>
+
+      <div class="form-group">
+        <label>Font Family</label>
+        <select id="fontSelector" class="status-select">
+          <option value="inter">Inter</option>
+          <option value="poppins">Poppins</option>
+          <option value="lato">Lato</option>
+          <option value="georgia">Georgia</option>
+        </select>
+      </div>
+
+      <div class="design-slider-grid">
+        <div class="form-group">
+          <label>Font Size <span id="fontSizeValue">16</span>px</label>
+          <input id="fontSizeSlider" type="range" min="13" max="20" value="16">
+        </div>
+
+        <div class="form-group">
+          <label>Line Spacing <span id="lineSpacingValue">1.6</span></label>
+          <input id="lineSpacingSlider" type="range" min="1.2" max="2" step="0.1" value="1.6">
+        </div>
+
+        <div class="form-group">
+          <label>Section Spacing <span id="sectionSpacingValue">22</span>px</label>
+          <input id="sectionSpacingSlider" type="range" min="12" max="38" value="22">
+        </div>
+
+        <div class="form-group">
+          <label>Page Padding <span id="pagePaddingValue">36</span>px</label>
+          <input id="pagePaddingSlider" type="range" min="20" max="58" value="36">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Header Style</label>
+        <select id="headerStyleSelector" class="status-select">
+          <option value="standard">Standard</option>
+          <option value="compact">Compact</option>
+          <option value="statement">Statement</option>
+        </select>
+      </div>
+
+      <button class="secondary-action-btn" id="resetDesignBtn">
+        Reset Design
+      </button>
+    </div>
+
+    <div class="panel-card">
+      <h3>Section Control</h3>
+      <p>Show, hide and reorder your CV sections depending on the role.</p>
+      <div id="sectionControlList" class="section-control-list"></div>
+    </div>
+
+    <div class="panel-card match-card">
+      <h3>Job Match Engine</h3>
+      <p>Paste a job advert and JobReady will compare it against your CV.</p>
+
+      <div class="form-group">
+        <label>Job Description</label>
+        <textarea id="jobDescriptionInput" placeholder="Paste the job advert here..."></textarea>
+      </div>
+
+      <button class="secondary-action-btn" id="analyseJobBtn">
+        Analyse Job Match
+      </button>
+    </div>
+
+    <div class="panel-card cover-card">
+      <h3>Application Package</h3>
+      <p>Generate your cover letter and open your next application tools.</p>
+
+      <div class="builder-actions">
+        <button class="secondary-action-btn" id="coverLetterBtn">
+          Generate Cover Letter
+        </button>
+
+        <button class="secondary-action-btn" id="applicationPackageBtn">
+          Generate Application Kit
+        </button>
+      </div>
+    </div>
+
+    <div class="panel-card ats-card">
+      <div class="ats-top">
+        <div>
+          <h3>Live ATS Score</h3>
+          <p>Your CV performance against recruiter systems.</p>
+        </div>
+
+        <div class="score-circle premium-score-circle" id="atsScore">65%</div>
+      </div>
+
+      <div class="ats-feedback">
+        <div class="feedback-item good" id="feedback1">✓ Add more job-specific keywords</div>
+        <div class="feedback-item warning" id="feedback2">⚠ Professional summary missing</div>
+        <div class="feedback-item warning" id="feedback3">⚠ Add measurable achievements</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="builder-right">
+
+    <div class="insight-panel recruiter-insight-panel">
+      <div>
+        <p class="insight-label">Selected Template</p>
+        <h2 id="selectedTemplateName">Modern ATS</h2>
+      </div>
+
+      <div>
+        <p class="insight-label">Job Match Score</p>
+        <h2 id="matchScore">0%</h2>
+      </div>
+
+      <div>
+        <p class="insight-label">Recruiter Insight</p>
+        <p id="recruiterInsight">Build your CV and paste a job advert to see how well you match.</p>
+      </div>
+    </div>
+
+    <div class="panel-card template-panel premium-template-panel">
+      <div class="template-panel-header">
+        <div>
+          <p class="insight-label">Premium Template Studio</p>
+          <h3>Choose your CV style</h3>
+          <p>Professional structures for different industries — not childish colour swaps.</p>
+        </div>
+
+        <a href="templates.html" class="dashboard-btn">Marketplace</a>
+      </div>
+
+      <div class="template-category-label">Core recruiter-grade templates</div>
+
+      <div class="template-selector premium-template-selector">
+        <button class="template-pill active-template" data-template="modern">Modern ATS</button>
+        <button class="template-pill" data-template="graduate">Graduate UK</button>
+        <button class="template-pill" data-template="prime-ats">Prime ATS</button>
+        <button class="template-pill" data-template="pure">Pure ATS</button>
+        <button class="template-pill" data-template="classic">Classic Professional</button>
+        <button class="template-pill" data-template="oxford">Oxford Traditional</button>
+      </div>
+
+      <div class="template-category-label">Premium industry templates</div>
+
+      <div class="template-selector premium-template-selector">
+        <button class="template-pill premium-pill" data-template="executive">👑 Executive Black</button>
+        <button class="template-pill premium-pill" data-template="corporate">👑 Corporate Pro</button>
+        <button class="template-pill premium-pill" data-template="consultant">👑 Consulting Elite</button>
+        <button class="template-pill premium-pill" data-template="finance">👑 Investment Banking</button>
+        <button class="template-pill premium-pill" data-template="silicon">👑 FAANG Tech</button>
+        <button class="template-pill premium-pill" data-template="developer">👑 Developer Grid</button>
+        <button class="template-pill premium-pill" data-template="data">👑 Data Analyst Pro</button>
+        <button class="template-pill premium-pill" data-template="cyber">👑 Cyber Security</button>
+        <button class="template-pill premium-pill" data-template="legal">👑 Legal Counsel</button>
+        <button class="template-pill premium-pill" data-template="healthcare">👑 Healthcare Pro</button>
+        <button class="template-pill premium-pill" data-template="nhs">👑 NHS Admin</button>
+        <button class="template-pill premium-pill" data-template="sales">👑 Sales Impact</button>
+        <button class="template-pill premium-pill" data-template="marketing">👑 Marketing Pulse</button>
+        <button class="template-pill premium-pill" data-template="portfolio">👑 Portfolio Bold</button>
+        <button class="template-pill premium-pill" data-template="apprentice">👑 Apprentice Start</button>
+        <button class="template-pill premium-pill" data-template="student">👑 Student Focus</button>
+        <button class="template-pill premium-pill" data-template="career-switch">👑 Career Switch</button>
+        <button class="template-pill premium-pill" data-template="retail">👑 Retail Ready</button>
+        <button class="template-pill premium-pill" data-template="hospitality">👑 Hospitality Pro</button>
+        <button class="template-pill premium-pill" data-template="international">👑 International Clean</button>
+        <button class="template-pill premium-pill" data-template="boardroom">👑 Boardroom Elite</button>
+        <button class="template-pill premium-pill" data-template="minimal">👑 Minimal Elite</button>
+        <button class="template-pill premium-pill" data-template="creative">👑 Creative Edge</button>
+        <button class="template-pill premium-pill" data-template="premium-pro">👑 Premium Pro</button>
+      </div>
+
+      <div class="theme-selector-row">
+        <button class="theme-dot active-theme" data-theme="blue" title="Blue"></button>
+        <button class="theme-dot theme-purple" data-theme="purple" title="Purple"></button>
+        <button class="theme-dot theme-green" data-theme="green" title="Green"></button>
+        <button class="theme-dot theme-orange" data-theme="orange" title="Orange"></button>
+        <button class="theme-dot theme-dark" data-theme="dark" title="Dark"></button>
+      </div>
+    </div>
+
+    <div class="builder-intelligence-grid">
+      <div class="panel-card">
+        <p class="insight-label">CV Health</p>
+        <h3 id="cvHealthScore">0%</h3>
+        <div class="mini-progress"><div id="cvHealthBar"></div></div>
+        <div id="cvHealthOutput" class="builder-intelligence-output"></div>
+      </div>
+
+      <div class="panel-card">
+        <p class="insight-label">Recruiter Scan</p>
+        <h3 id="scanScore">0%</h3>
+        <div class="mini-progress"><div id="scanBar"></div></div>
+        <div id="recruiterScanOutput" class="builder-intelligence-output"></div>
+      </div>
+    </div>
+
+    <div class="panel-card" id="recruiterPanel" style="display:none; margin-bottom:25px;">
+      <h3>Recruiter Mode</h3>
+      <div id="recruiterOutput" class="assistant-rich-text"></div>
+    </div>
+
+    <div class="panel-card" id="applicationPackagePanel" style="display:none; margin-bottom:25px;">
+      <h3>Application Kit</h3>
+      <div id="applicationPackageOutput" class="assistant-rich-text"></div>
+    </div>
+
+    <div class="panel-card" id="advancedScorePanel" style="display:none; margin-bottom:25px;">
+      <h3>Advanced CV Score</h3>
+      <div id="advancedScoreOutput"></div>
+    </div>
+
+    <div class="cv-stage-shell">
+      <div class="cv-stage-toolbar">
+        <div>
+          <p class="insight-label">Live CV Preview</p>
+          <h3>Recruiter-grade output</h3>
+        </div>
+
+        <span>PDF & Word ready</span>
+      </div>
+
+      <div class="cv-preview premium-cv-preview template-modern theme-blue" id="cvPreview"></div>
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/builder.js"></script>
+<script src="/js/live-premium.js"></script>
+
+</body>
+
+</html>

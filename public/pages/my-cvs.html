@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>My CVs - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="logo">
+      JobReady
+    </div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="builder.html">Builder</a>
+      <a href="templates.html">Templates</a>
+      <a href="my-cvs.html" class="active-nav">My CVs</a>
+      <a href="resume-upload.html">Upload CV</a>
+      <a href="resume-tailor.html">Resume Tailor</a>
+      <a href="application-assistant.html">Application Assistant</a>
+      <a href="interview-live.html">Live Interview</a>
+      <a href="career-assistant.html">AI Assistant</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+
+    <button class="nav-btn" id="logoutBtn">
+      Logout
+    </button>
+
+  </nav>
+
+  <section class="dashboard-section premium-my-cvs-page">
+
+    <div class="my-cvs-hero">
+      <div>
+        <p class="insight-label">CV Command Centre</p>
+        <h1>Your saved CVs, upgraded into an application system.</h1>
+        <p>
+          Manage every version of your CV, track strength scores, reopen designs,
+          and keep improving each application with JobReady.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="builder.html" class="primary-btn">Create New CV</a>
+          <a href="resume-upload.html" class="secondary-btn">Upload Existing CV</a>
+        </div>
+      </div>
+
+      <div class="my-cvs-hero-card">
+        <span>Portfolio Health</span>
+        <h2 id="portfolioHealth">0%</h2>
+        <p id="portfolioAdvice">Loading your CV portfolio...</p>
+      </div>
+    </div>
+
+    <div class="trust-strip my-cvs-stats-strip">
+      <div>
+        <strong id="totalCvStat">0</strong>
+        <span>Saved CVs</span>
+      </div>
+
+      <div>
+        <strong id="bestCvStat">0%</strong>
+        <span>Best ATS Score</span>
+      </div>
+
+      <div>
+        <strong id="avgCvStat">0%</strong>
+        <span>Average Score</span>
+      </div>
+
+      <div>
+        <strong id="latestCvStat">—</strong>
+        <span>Latest Update</span>
+      </div>
+    </div>
+
+    <div class="panel-card my-cvs-toolbar">
+      <div>
+        <p class="insight-label">Saved CV Library</p>
+        <h3>Find and manage your best CV versions</h3>
+        <p>Search by role, title, skills or summary.</p>
+      </div>
+
+      <input
+        id="cvSearchInput"
+        class="template-search-input"
+        placeholder="Search CVs: data analyst, software, finance, apprenticeship..."
+      />
+    </div>
+
+    <div id="cvList" class="premium-saved-cv-grid">
+      <p class="loading-text">Loading your CVs...</p>
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/my-cvs.js"></script>
+
+</body>
+
+</html>

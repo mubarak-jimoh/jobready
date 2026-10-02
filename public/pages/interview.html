@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>JobReady Interview Prep</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="logo">
+      JobReady
+    </div>
+
+    <div class="nav-links">
+      <a href="builder.html">Builder</a>
+      <a href="my-cvs.html">My CVs</a>
+      <a href="interview.html">Interview Prep</a>
+    </div>
+
+    <button class="nav-btn" id="logoutBtn">
+      Logout
+    </button>
+
+  </nav>
+
+  <section class="dashboard-section">
+
+    <div class="dashboard-header">
+
+      <div>
+        <h1>AI Interview Prep</h1>
+
+        <p>
+          Practise realistic interview questions with recruiter-level feedback.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="builder-container">
+
+      <!-- LEFT -->
+
+      <div class="builder-left">
+
+        <div class="panel-card">
+
+          <h3>Target Job</h3>
+
+          <div class="form-group">
+            <label>Job Title</label>
+
+            <input
+              type="text"
+              id="jobTitleInput"
+              placeholder="Retail Assistant"
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Job Description</label>
+
+            <textarea
+              id="jobDescriptionInput"
+              placeholder="Paste the job advert..."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Your CV Summary</label>
+
+            <textarea
+              id="cvSummaryInput"
+              placeholder="Tell JobReady about your experience..."
+            ></textarea>
+          </div>
+
+          <div class="builder-actions">
+
+            <button
+              class="generate-btn"
+              id="generateInterviewBtn"
+            >
+              Generate Interview Prep
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="panel-card">
+
+          <h3>Practice Answer</h3>
+
+          <div class="form-group">
+
+            <label>Interview Question</label>
+
+            <textarea
+              id="questionInput"
+              placeholder="Paste interview question..."
+            ></textarea>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Your Answer</label>
+
+            <textarea
+              id="answerInput"
+              placeholder="Write your interview answer..."
+            ></textarea>
+
+          </div>
+
+          <button
+            class="ai-btn"
+            id="analyseAnswerBtn"
+          >
+            Analyse My Answer
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="builder-right">
+
+        <div class="insight-panel">
+
+          <div>
+
+            <p class="insight-label">
+              Interview Score
+            </p>
+
+            <h2 id="interviewScore">
+              0
+            </h2>
+
+          </div>
+
+          <div>
+
+            <p class="insight-label">
+              Hiring Signal
+            </p>
+
+            <p id="hiringSignal">
+              No analysis yet.
+            </p>
+
+          </div>
+
+          <div>
+
+            <p class="insight-label">
+              Would Progress?
+            </p>
+
+            <p id="wouldProgress">
+              -
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="panel-card">
+
+          <h3>Generated Interview Questions</h3>
+
+          <div id="questionsContainer">
+
+            <p>
+              Generate interview prep to begin.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="panel-card">
+
+          <h3>Recruiter Feedback</h3>
+
+          <div id="feedbackContainer">
+
+            <p>
+              Your interview feedback will appear here.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/interview.js"></script>
+
+</body>
+
+</html>

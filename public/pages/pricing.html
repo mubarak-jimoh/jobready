@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Pricing - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="my-cvs.html">My CVs</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="interview-simulator.html">Interview Simulator</a>
+    <a href="salary.html">Salary Path</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="pricing.html" class="active-nav">Pricing</a>
+  </div>
+</nav>
+
+<section class="dashboard-section">
+
+  <div class="pricing-hero">
+    <p class="insight-label">JobReady Premium</p>
+
+    <h1>Build better applications, faster.</h1>
+
+    <p>
+      Premium unlocks the full JobReady career system: AI CV rewriting,
+      resume tailoring, LinkedIn optimisation, interview practice,
+      premium templates and career intelligence.
+    </p>
+
+    <div class="pricing-hero-badges">
+      <span>ATS scoring</span>
+      <span>Premium templates</span>
+      <span>Interview prep</span>
+      <span>LinkedIn optimiser</span>
+      <span>Career assistant</span>
+    </div>
+  </div>
+
+  <div id="paymentSuccessBox" class="panel-card pricing-alert pricing-success-alert" style="display:none;">
+    <h3>Premium Activated</h3>
+    <p>Your payment was successful. JobReady Premium is now active on your account.</p>
+  </div>
+
+  <div id="paymentCancelBox" class="panel-card pricing-alert pricing-cancel-alert" style="display:none;">
+    <h3>Checkout Cancelled</h3>
+    <p>No payment was taken. You can upgrade whenever you are ready.</p>
+  </div>
+
+  <div id="premiumActiveBox" class="panel-card pricing-alert pricing-success-alert" style="display:none;">
+    <h3>You are already Premium</h3>
+    <p>Your account has Premium access. You can keep using all unlocked JobReady tools.</p>
+  </div>
+
+  <div class="pricing-grid">
+
+    <div class="pricing-card">
+      <p class="pricing-plan-label">Free</p>
+
+      <h2>£0</h2>
+
+      <p class="pricing-subtitle">
+        For testing JobReady and building your first CV.
+      </p>
+
+      <div class="pricing-feature-list">
+        <p>✓ Build CVs</p>
+        <p>✓ Basic ATS score</p>
+        <p>✓ Basic job match checks</p>
+        <p>✓ Limited AI usage</p>
+        <p>✓ Free templates</p>
+        <p>✓ Save CVs</p>
+      </div>
+
+      <a href="builder.html" class="secondary-action-btn pricing-button">
+        Start Free
+      </a>
+    </div>
+
+    <div class="pricing-card premium-pricing-card">
+      <div class="pricing-best-badge">Best Value</div>
+
+      <p class="pricing-plan-label">Premium</p>
+
+      <h2>£9.99<span>/month</span></h2>
+
+      <p class="pricing-subtitle">
+        For serious applicants who want stronger CVs, better applications and more confidence.
+      </p>
+
+      <div class="pricing-feature-list premium-feature-list">
+        <p>✓ Unlimited AI CV rewrites</p>
+        <p>✓ Resume Tailor Engine</p>
+        <p>✓ LinkedIn Optimiser</p>
+        <p>✓ Advanced CV scoring</p>
+        <p>✓ AI interview preparation</p>
+        <p>✓ AI career assistant</p>
+        <p>✓ Premium CV templates</p>
+        <p>✓ Cover letter generator</p>
+        <p>✓ Salary path intelligence</p>
+        <p>✓ Job tracking tools</p>
+      </div>
+
+      <button class="generate-btn pricing-button upgrade-button" id="upgradeBtn">
+        Upgrade to Premium
+      </button>
+
+      <p class="secure-checkout-note">
+        Secure checkout powered by Stripe. Cancel anytime through billing.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="pricing-value-section">
+    <div>
+      <p class="insight-label">Why Premium?</p>
+
+      <h2>
+        A normal CV builder gives you a document. JobReady gives you a career system.
+      </h2>
+
+      <p>
+        Resume builders help you format a CV. JobReady helps you improve the actual application:
+        rewrite weak sections, tailor to job adverts, practise interviews, optimise LinkedIn and understand your career direction.
+      </p>
+    </div>
+
+    <div class="pricing-value-list">
+      <div>
+        <strong>Better CVs</strong>
+        <span>Premium templates, AI rewriting and recruiter-focused structure.</span>
+      </div>
+
+      <div>
+        <strong>Better applications</strong>
+        <span>Match your CV to job adverts and uncover missing keywords.</span>
+      </div>
+
+      <div>
+        <strong>Better interviews</strong>
+        <span>Practise realistic questions and improve your answers.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-comparison-panel">
+    <h2>What Premium unlocks</h2>
+
+    <div class="pricing-comparison-grid">
+      <div>
+        <strong>Free</strong>
+        <p>Good for exploring the platform.</p>
+      </div>
+
+      <div>
+        <strong>Premium</strong>
+        <p>Built for serious job seekers applying consistently.</p>
+      </div>
+    </div>
+
+    <div class="comparison-table">
+      <div>
+        <span>AI CV rewrites</span>
+        <strong>Limited → Unlimited</strong>
+      </div>
+
+      <div>
+        <span>Premium templates</span>
+        <strong>Locked → Unlocked</strong>
+      </div>
+
+      <div>
+        <span>Resume tailoring</span>
+        <strong>Limited → Full access</strong>
+      </div>
+
+      <div>
+        <span>Interview tools</span>
+        <strong>Limited → Advanced prep</strong>
+      </div>
+
+      <div>
+        <span>LinkedIn optimisation</span>
+        <strong>Limited → Full profile review</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-final-cta">
+    <h2>Ready to apply with more confidence?</h2>
+
+    <p>
+      Upgrade to Premium and unlock the tools that help you build stronger applications.
+    </p>
+
+    <button class="generate-btn upgrade-button" id="upgradeBtnBottom">
+      Upgrade to Premium
+    </button>
+  </div>
+
+</section>
+
+<script type="module" src="/js/pricing.js"></script>
+
+</body>
+
+</html>

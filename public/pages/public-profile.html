@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Public Profile - JobReady</title>
+
+  <meta
+    name="description"
+    content="Create a polished JobReady public recruiter profile with your target role, skills, projects, CV highlights and career links."
+  />
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="resume-examples.html">CV Examples</a>
+    <a href="resume-upload.html">Upload CV</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="cover-letter-templates.html">Cover Letters</a>
+    <a href="interview-live.html">Live Interview</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="public-profile.html" class="active-nav">Public Profile</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-dashboard-section public-profile-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Recruiter-facing profile</p>
+
+      <h1>Create a polished public profile recruiters can understand fast.</h1>
+
+      <p>
+        Build a clean profile with your target role, skills, projects, links and CV highlights.
+        Share it with recruiters, employers, apprenticeship providers or hiring managers.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="saveProfileBtn">Save Profile</button>
+        <button class="secondary-btn" id="previewProfileBtn">Preview Profile</button>
+      </div>
+
+      <div class="builder-mini-trust-row">
+        <span>Recruiter-ready summary</span>
+        <span>Skills and project proof</span>
+        <span>Shareable profile link</span>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Profile Strength</p>
+      <h2 id="profileStrengthScore">0%</h2>
+      <span id="profileStrengthLabel">Getting started</span>
+
+      <div class="career-score-bar">
+        <div id="profileStrengthBar"></div>
+      </div>
+
+      <p id="profileStrengthAdvice">
+        Add your role, summary, skills, projects and links to create a stronger recruiter profile.
+      </p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Visibility</p>
+      <h2 id="visibilityStatus">Private</h2>
+      <span>Control whether your profile is shareable</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Profile Link</p>
+      <h2 id="profileLinkStatus">Not ready</h2>
+      <span>Generated after saving</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Recruiter Signal</p>
+      <h2 id="recruiterSignalScore">0%</h2>
+      <span>How complete your profile appears</span>
+    </div>
+  </div>
+
+  <div class="builder-container public-profile-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card">
+        <p class="insight-label">Profile editor</p>
+        <h3>Your public profile details</h3>
+
+        <p>
+          Keep this clear, truthful and focused on the roles you want.
+        </p>
+
+        <div class="form-group">
+          <label>Full Name</label>
+          <input id="fullNameInput" type="text" placeholder="John Smith">
+        </div>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="targetRoleInput" type="text" placeholder="Junior Data Analyst">
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <input id="locationInput" type="text" placeholder="London, Manchester, Remote, United Kingdom">
+        </div>
+
+        <div class="form-group">
+          <label>Professional Headline</label>
+          <input id="headlineInput" type="text" placeholder="Aspiring Data Analyst | Excel, SQL & Power BI">
+        </div>
+
+        <div class="form-group">
+          <label>Profile Summary</label>
+          <textarea id="summaryInput" placeholder="Write a clear 4-6 line profile explaining your target role, strengths, skills and what you are looking for..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Core Skills</label>
+          <textarea id="skillsInput" placeholder="Excel, SQL, Power BI, Communication, Problem Solving, Customer Service..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Projects / Portfolio</label>
+          <textarea id="projectsInput" placeholder="Add projects, coursework, dashboards, websites, apps, case studies or practical evidence..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Experience Highlights</label>
+          <textarea id="experienceInput" placeholder="Add short highlights from work experience, volunteering, placements, part-time work or achievements..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Education / Certifications</label>
+          <textarea id="educationInput" placeholder="T Level, A Levels, GCSEs, degree, bootcamp, certifications or online courses..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Links</label>
+          <textarea id="linksInput" placeholder="LinkedIn, GitHub, portfolio, website, Behance, Kaggle..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Profile Visibility</label>
+          <select id="visibilityInput" class="status-select">
+            <option value="private">Private</option>
+            <option value="public">Public</option>
+          </select>
+        </div>
+
+        <button class="generate-btn" id="saveProfileBtnSide">
+          Save Public Profile
+        </button>
+      </div>
+
+      <div class="panel-card">
+        <p class="insight-label">Recruiter tips</p>
+        <h3>What makes a profile strong?</h3>
+
+        <div class="interview-tip-list">
+          <p><strong>Clarity:</strong> show your target role immediately.</p>
+          <p><strong>Proof:</strong> include projects, tools, achievements or outcomes.</p>
+          <p><strong>Keywords:</strong> use skills recruiters search for.</p>
+          <p><strong>Links:</strong> add LinkedIn, GitHub or portfolio evidence.</p>
+          <p><strong>Focus:</strong> avoid sounding generic or unfocused.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="panel-card">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Live recruiter preview</p>
+            <h3>Public Profile Preview</h3>
+            <p>This is how your profile will appear to recruiters.</p>
+          </div>
+
+          <span class="product-status-pill" id="previewStatus">Draft</span>
+        </div>
+
+        <div class="public-profile-preview-card" id="profilePreview">
+          <div class="profile-preview-header">
+            <div class="profile-avatar" id="profileAvatar">J</div>
+
+            <div>
+              <h2 id="previewName">Your Name</h2>
+              <p id="previewHeadline">Your professional headline will appear here.</p>
+              <span id="previewLocation">United Kingdom</span>
+            </div>
+          </div>
+
+          <div class="profile-preview-section">
+            <p class="insight-label">Target Role</p>
+            <h3 id="previewRole">Target role not set</h3>
+          </div>
+
+          <div class="profile-preview-section">
+            <p class="insight-label">Profile Summary</p>
+            <p id="previewSummary">
+              Add a summary to show recruiters who you are, what you are targeting and why you are a strong candidate.
+            </p>
+          </div>
+
+          <div class="profile-preview-section">
+            <p class="insight-label">Core Skills</p>
+            <div class="keyword-chip-row" id="previewSkills">
+              <span class="keyword-chip">Add skills</span>
+            </div>
+          </div>
+
+          <div class="profile-preview-section">
+            <p class="insight-label">Projects & Evidence</p>
+            <div id="previewProjects">
+              <p>Add projects, coursework or portfolio evidence.</p>
+            </div>
+          </div>
+
+          <div class="profile-preview-section">
+            <p class="insight-label">Experience Highlights</p>
+            <div id="previewExperience">
+              <p>Add experience highlights.</p>
+            </div>
+          </div>
+
+          <div class="profile-preview-section">
+            <p class="insight-label">Education & Certifications</p>
+            <div id="previewEducation">
+              <p>Add education or certifications.</p>
+            </div>
+          </div>
+
+          <div class="profile-preview-section">
+            <p class="insight-label">Links</p>
+            <div class="keyword-chip-row" id="previewLinks">
+              <span class="keyword-chip">Add links</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-analytics-grid" style="margin-top:25px;">
+
+        <div class="panel-card analytics-card">
+          <p class="insight-label">Profile checklist</p>
+          <h3>Recruiter readiness</h3>
+
+          <div class="funnel-row">
+            <span>Name and role</span>
+            <strong id="checkNameRole">No</strong>
+          </div>
+
+          <div class="funnel-row">
+            <span>Summary</span>
+            <strong id="checkSummary">No</strong>
+          </div>
+
+          <div class="funnel-row">
+            <span>Skills</span>
+            <strong id="checkSkills">No</strong>
+          </div>
+
+          <div class="funnel-row">
+            <span>Projects / proof</span>
+            <strong id="checkProjects">No</strong>
+          </div>
+        </div>
+
+        <div class="panel-card analytics-card">
+          <p class="insight-label">Share profile</p>
+          <h3>Your public link</h3>
+
+          <div id="profileLinkBox" class="builder-intelligence-output">
+            <p>Save your profile to generate your link.</p>
+          </div>
+
+          <button class="secondary-action-btn" id="copyProfileLinkBtn">
+            Copy Profile Link
+          </button>
+        </div>
+
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Next step</p>
+            <h3>Make your profile stronger</h3>
+            <p>Use JobReady tools to improve your CV, tailor it and prepare for interviews.</p>
+          </div>
+        </div>
+
+        <div class="builder-actions">
+          <a href="builder.html" class="dashboard-btn">Improve CV</a>
+          <a href="resume-tailor.html" class="dashboard-btn">Tailor To Job</a>
+          <a href="interview-live.html" class="dashboard-btn">Practise Interview</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/public-profile.js"></script>
+<script src="/js/live-premium.js"></script>
+
+</body>
+
+</html>

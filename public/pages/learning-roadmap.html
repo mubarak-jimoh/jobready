@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Learning Roadmap - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">JobReady</div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="builder.html">Builder</a>
+      <a href="templates.html">Templates</a>
+      <a href="my-cvs.html">My CVs</a>
+      <a href="resume-tailor.html">Resume Tailor</a>
+      <a href="interview-simulator.html">Interview Simulator</a>
+      <a href="job-tracker.html">Job Tracker</a>
+      <a href="career-assistant.html">AI Assistant</a>
+      <a href="learning-roadmap.html" class="active-nav">Learning Roadmap</a>
+      <a href="account.html">Account</a>
+    </div>
+
+    <button class="nav-btn" id="logoutBtn">Logout</button>
+  </nav>
+
+  <section class="dashboard-section premium-roadmap-section">
+
+    <div class="premium-dashboard-hero">
+      <div>
+        <p class="insight-label">Learning Roadmap Builder</p>
+
+        <h1>Turn your career goal into a weekly action plan.</h1>
+
+        <p>
+          Build a structured roadmap with skills, certifications, portfolio projects,
+          job search actions and milestones designed around your target role.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="primary-btn" id="generateRoadmapTopBtn">Generate Roadmap</button>
+          <a href="career-assistant.html" class="secondary-btn">Ask Career Assistant</a>
+        </div>
+      </div>
+
+      <div class="dashboard-career-score-card">
+        <p class="insight-label">Roadmap Progress</p>
+        <h2 id="roadmapStrength">0%</h2>
+        <span>Planning strength</span>
+
+        <div class="career-score-bar">
+          <div id="roadmapStrengthBar"></div>
+        </div>
+
+        <p>
+          Strong plans combine skills, proof projects, certifications and application milestones.
+        </p>
+      </div>
+    </div>
+
+    <div class="insight-panel premium-insight-panel">
+      <div>
+        <p class="insight-label">Saved Roadmaps</p>
+        <h2 id="roadmapCount">0</h2>
+        <span>Total learning plans created</span>
+      </div>
+
+      <div>
+        <p class="insight-label">Current Duration</p>
+        <h2 id="selectedDuration">4w</h2>
+        <span>Timeline selected</span>
+      </div>
+
+      <div>
+        <p class="insight-label">Career Focus</p>
+        <h2 id="careerFocus">Unset</h2>
+        <span>Your target role</span>
+      </div>
+    </div>
+
+    <div class="builder-container roadmap-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+      <div class="builder-left">
+
+        <div class="panel-card roadmap-input-card">
+          <p class="insight-label">Roadmap Input</p>
+          <h2>Create Roadmap</h2>
+          <p>Tell JobReady your goal and get a practical learning plan.</p>
+
+          <div class="form-group">
+            <label>Target Role</label>
+            <input id="targetRoleInput" placeholder="Data Analyst, Software Engineer, Cybersecurity Analyst">
+          </div>
+
+          <div class="form-group">
+            <label>Current Level</label>
+            <input id="currentLevelInput" placeholder="Beginner, student, graduate, junior, career switcher">
+          </div>
+
+          <div class="form-group">
+            <label>Current Skills</label>
+            <textarea id="skillsInput" placeholder="Excel, Python, communication, customer service..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Duration</label>
+            <select id="durationInput" class="status-select">
+              <option value="4 weeks">4 weeks</option>
+              <option value="8 weeks">8 weeks</option>
+              <option value="12 weeks">12 weeks</option>
+              <option value="6 months">6 months</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Learning Goal</label>
+            <textarea id="goalInput" placeholder="I want to become job-ready, build projects, gain qualifications and apply for roles."></textarea>
+          </div>
+
+          <button class="generate-btn" id="generateRoadmapBtn">
+            Generate Roadmap
+          </button>
+        </div>
+
+        <div class="panel-card roadmap-coach-card">
+          <h3>What makes a strong roadmap?</h3>
+
+          <div class="interview-tip-list">
+            <p><strong>Skills:</strong> learn the tools employers ask for.</p>
+            <p><strong>Projects:</strong> build proof, not just knowledge.</p>
+            <p><strong>Milestones:</strong> track weekly progress.</p>
+            <p><strong>Applications:</strong> move from learning to applying.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="builder-right">
+
+        <div class="tailor-intelligence-grid">
+          <div class="panel-card tailor-mini-card">
+            <p class="insight-label">Plan Type</p>
+            <h3 id="planType">Career</h3>
+            <span>Learning + employability</span>
+          </div>
+
+          <div class="panel-card tailor-mini-card">
+            <p class="insight-label">Priority</p>
+            <h3 id="priorityStatus">Set goal</h3>
+            <span>What to focus on first</span>
+          </div>
+        </div>
+
+        <div class="panel-card roadmap-output-card">
+          <h3>Your Roadmap</h3>
+          <p>Generated plans will appear here and save automatically.</p>
+
+          <div id="roadmapOutput" class="assistant-rich-text roadmap-output-box">
+            <p>No roadmap generated yet.</p>
+          </div>
+        </div>
+
+        <div class="panel-card" style="margin-top:25px;">
+          <h3>Saved Roadmaps</h3>
+          <div id="savedRoadmaps">
+            <p>Loading saved roadmaps...</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/learning-roadmap.js"></script>
+
+</body>
+
+</html>

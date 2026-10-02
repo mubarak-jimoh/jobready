@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>AI Career Assistant - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">JobReady</div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="builder.html">Builder</a>
+      <a href="templates.html">Templates</a>
+      <a href="my-cvs.html">My CVs</a>
+      <a href="cover-letters.html">Cover Letters</a>
+      <a href="interview.html">Interview Prep</a>
+      <a href="salary.html">Salary Path</a>
+      <a href="career-assistant.html">AI Assistant</a>
+      <a href="account.html">Account</a>
+    </div>
+
+    <button class="nav-btn" id="logoutBtn">Logout</button>
+  </nav>
+
+  <section class="dashboard-section">
+
+    <div class="dashboard-header">
+      <div>
+        <h1>AI Career Assistant</h1>
+        <p>Your personal career strategist for skills, qualifications, salary growth, interviews and job strategy.</p>
+      </div>
+    </div>
+
+    <div class="panel-card">
+      <h3>What do you want help with?</h3>
+      <p>Use one of these prompts or ask your own question.</p>
+
+      <div class="template-selector">
+        <button class="template-pill prompt-btn">How do I become a software engineer?</button>
+        <button class="template-pill prompt-btn">What qualifications do I need for cybersecurity?</button>
+        <button class="template-pill prompt-btn">Create a 6-month roadmap for data analytics</button>
+        <button class="template-pill prompt-btn">How can I increase my salary?</button>
+        <button class="template-pill prompt-btn">What should I learn for finance?</button>
+        <button class="template-pill prompt-btn">How do I switch careers?</button>
+      </div>
+    </div>
+
+    <div class="panel-card" style="margin-top:25px;">
+
+      <div id="chatBox" class="career-chat-box">
+        <div class="question-card">
+          <h4>JobReady Assistant</h4>
+          <p>
+            Tell me your goal, current level, skills and what you want help with.
+            I can recommend skills, qualifications, projects, salary steps and a clear action plan.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top:25px;">
+        <label>Ask your career question</label>
+        <textarea
+          id="assistantInput"
+          placeholder="Example: I want to become a data analyst. What should I learn, what qualifications should I get, and what projects should I build?"
+        ></textarea>
+      </div>
+
+      <button class="generate-btn" id="sendAssistantBtn">
+        Ask AI Career Assistant
+      </button>
+
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/career-assistant.js"></script>
+
+</body>
+
+</html>

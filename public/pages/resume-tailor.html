@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Resume Tailor - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="my-cvs.html">My CVs</a>
+    <a href="resume-upload.html">Upload CV</a>
+    <a href="resume-tailor.html" class="active-nav">Resume Tailor</a>
+    <a href="interview-live.html">Live Interview</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="pricing.html">Pricing</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-tailor-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Resume Tailor Engine</p>
+
+      <h1>Turn one CV into a job-matched application.</h1>
+
+      <p>
+        Paste a job advert and your current CV sections. JobReady scans the advert,
+        scores your match, finds missing keywords and rewrites your CV so it feels built for that exact role.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="tailorTopBtn">Tailor CV</button>
+        <a href="builder.html" class="secondary-btn">Open Builder</a>
+      </div>
+
+      <div class="builder-mini-trust-row">
+        <span>ATS keyword matching</span>
+        <span>Recruiter-style feedback</span>
+        <span>Tailored CV sections</span>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Match Intelligence</p>
+
+      <h2 id="heroMatchScore">0%</h2>
+
+      <span>Current ATS match</span>
+
+      <div class="career-score-bar">
+        <div id="matchScoreBar"></div>
+      </div>
+
+      <p>
+        Strong applications use the same language employers are already asking for.
+      </p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">ATS Match</p>
+      <h2 id="atsScore">0%</h2>
+      <span>Keyword and structure alignment</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Recruiter Match</p>
+      <h2 id="recruiterScore">0%</h2>
+      <span>Human readability and role fit</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Interview Chance</p>
+      <h2 id="interviewChance">0%</h2>
+      <span>Likelihood of progressing</span>
+    </div>
+  </div>
+
+  <div class="career-score-breakdown-grid">
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Keyword Density</p>
+      <h2 id="keywordDensityScore">0%</h2>
+      <div class="mini-progress"><div id="keywordDensityBar"></div></div>
+      <span>How closely your CV language matches the advert</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Evidence Strength</p>
+      <h2 id="evidenceStrengthScore">0%</h2>
+      <div class="mini-progress"><div id="evidenceStrengthBar"></div></div>
+      <span>Proof, achievements and measurable impact</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Role Alignment</p>
+      <h2 id="roleAlignmentScore">0%</h2>
+      <div class="mini-progress"><div id="roleAlignmentBar"></div></div>
+      <span>How clearly the CV fits this specific role</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">ATS Risk</p>
+      <h2 id="atsRiskStatus">Not scanned</h2>
+      <span>Potential blockers before applying</span>
+    </div>
+
+  </div>
+
+  <div class="dashboard-action-strip">
+    <div>
+      <p class="insight-label">Tailoring Workflow</p>
+      <h2>Paste advert → Scan gaps → Rewrite sections → Apply stronger</h2>
+      <p>
+        Generic CVs get ignored. Tailored CVs show the employer that your skills,
+        wording and evidence match what they are hiring for.
+      </p>
+    </div>
+
+    <div class="dashboard-action-buttons">
+      <a href="resume-upload.html" class="secondary-action-btn">Upload Existing CV</a>
+      <button class="generate-btn" id="tailorStripBtn">Run Tailor</button>
+    </div>
+  </div>
+
+  <div class="builder-container resume-tailor-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card tailor-input-card">
+        <p class="insight-label">Application Input</p>
+
+        <h3>Paste the job and your CV</h3>
+
+        <p>
+          The more complete the advert and CV text, the stronger the tailoring report.
+        </p>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="targetRoleInput" placeholder="Data Analyst, Software Engineer, Marketing Assistant">
+        </div>
+
+        <div class="form-group">
+          <label>Company Name</label>
+          <input id="companyInput" placeholder="NHS, Barclays, Google, Local Council">
+        </div>
+
+        <div class="form-group">
+          <label>Job Description</label>
+          <textarea id="jobDescriptionInput" placeholder="Paste the full job advert here..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Current Summary</label>
+          <textarea id="summaryInput" placeholder="Paste your current CV summary..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Current Skills</label>
+          <textarea id="skillsInput" placeholder="Paste your current skills..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Current Experience</label>
+          <textarea id="experienceInput" placeholder="Paste your current experience section..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Current Education / Certifications</label>
+          <textarea id="educationInput" placeholder="Paste relevant education, qualifications or certifications..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="tailorBtn">
+          Tailor My CV
+        </button>
+      </div>
+
+      <div class="panel-card tailor-help-card">
+        <p class="insight-label">What this checks</p>
+
+        <h3>Recruiter matching signals</h3>
+
+        <div class="interview-tip-list">
+          <p><strong>Keywords:</strong> skills and phrases from the advert.</p>
+          <p><strong>Evidence:</strong> whether your CV proves the role requirements.</p>
+          <p><strong>Recruiter fit:</strong> how quickly a human can see relevance.</p>
+          <p><strong>Interview chance:</strong> how likely this application is to progress.</p>
+          <p><strong>ATS risk:</strong> missing wording that could weaken screening.</p>
+        </div>
+      </div>
+
+      <div class="panel-card tailor-help-card">
+        <p class="insight-label">Best Practice</p>
+
+        <h3>Before you apply</h3>
+
+        <div class="interview-tip-list">
+          <p>Do not copy the advert word-for-word.</p>
+          <p>Add missing keywords naturally and truthfully.</p>
+          <p>Use numbers where possible.</p>
+          <p>Make your summary match the role title.</p>
+          <p>Keep the CV readable for humans, not only ATS systems.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="tailor-intelligence-grid">
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Missing Keywords</p>
+          <h3 id="keywordCount">0</h3>
+          <span>Terms to add naturally</span>
+        </div>
+
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Priority</p>
+          <h3 id="priorityStatus">Not analysed</h3>
+          <span>What to fix first</span>
+        </div>
+      </div>
+
+      <div class="panel-card match-card">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">AI Match Intelligence</p>
+            <h3>Application strategy</h3>
+          </div>
+
+          <span class="product-status-pill">Role matching</span>
+        </div>
+
+        <p>
+          JobReady compares your CV against the job advert and gives role-specific
+          improvements designed to increase application strength.
+        </p>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Recruiter Feedback</p>
+            <h3>Tailoring report</h3>
+          </div>
+
+          <button class="secondary-action-btn" id="saveReportBtn">
+            Save Report
+          </button>
+        </div>
+
+        <div id="feedbackOutput" class="assistant-rich-text linkedin-output-box">
+          <p>No tailoring report yet.</p>
+        </div>
+      </div>
+
+      <div class="dashboard-analytics-grid" style="margin-top:25px;">
+
+        <div class="panel-card analytics-card">
+          <p class="insight-label">Keyword Scan</p>
+          <h3>Matched vs missing</h3>
+
+          <div class="funnel-row">
+            <span>Matched Keywords</span>
+            <strong id="matchedKeywordCount">0</strong>
+          </div>
+
+          <div class="funnel-row">
+            <span>Missing Keywords</span>
+            <strong id="missingKeywordCount">0</strong>
+          </div>
+
+          <div class="funnel-row">
+            <span>Keyword Coverage</span>
+            <strong id="keywordCoverageOutput">0%</strong>
+          </div>
+        </div>
+
+        <div class="panel-card analytics-card">
+          <p class="insight-label">ATS Risk Warnings</p>
+          <h3>Potential blockers</h3>
+
+          <div id="atsRiskOutput" class="builder-intelligence-output">
+            <p>Run a tailoring scan to detect ATS risks.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Matched Keywords</h3>
+
+        <div id="matchedKeywordsOutput" class="keyword-chip-row">
+          <p>No matched keywords yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Missing Keywords</h3>
+
+        <div id="keywordsOutput" class="keyword-chip-row">
+          <p>No missing keywords yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Improved Section</p>
+            <h3>Tailored Summary</h3>
+          </div>
+
+          <button class="secondary-action-btn" id="copySummaryBtn">
+            Copy Summary
+          </button>
+        </div>
+
+        <div id="summaryOutput" class="linkedin-output-box">
+          <p>No improved summary yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Improved Section</p>
+            <h3>Tailored Skills</h3>
+          </div>
+
+          <button class="secondary-action-btn" id="copySkillsBtn">
+            Copy Skills
+          </button>
+        </div>
+
+        <div id="skillsOutput" class="linkedin-output-box">
+          <p>No improved skills yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Improved Section</p>
+            <h3>Tailored Experience</h3>
+          </div>
+
+          <button class="secondary-action-btn" id="copyExperienceBtn">
+            Copy Experience
+          </button>
+        </div>
+
+        <div id="experienceOutput" class="assistant-rich-text linkedin-output-box">
+          <p>No improved experience yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Apply Improvements</p>
+            <h3>Send tailored sections into Builder</h3>
+            <p>Copy your improved summary, skills and experience into the CV Builder.</p>
+          </div>
+
+          <button class="generate-btn" id="sendToBuilderBtn">
+            Send To Builder
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Saved Reports</p>
+            <h3>Saved Tailoring Reports</h3>
+          </div>
+        </div>
+
+        <div id="savedReportsList">
+          <p>Loading saved reports...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/resume-tailor.js"></script>
+<script src="/js/live-premium.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>AI Career Assistant - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">JobReady</div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="builder.html">Builder</a>
+      <a href="templates.html">Templates</a>
+      <a href="my-cvs.html">My CVs</a>
+      <a href="resume-tailor.html">Resume Tailor</a>
+      <a href="interview-simulator.html">Interview Simulator</a>
+      <a href="job-tracker.html">Job Tracker</a>
+      <a href="career-assistant.html" class="active-nav">AI Assistant</a>
+      <a href="account.html">Account</a>
+    </div>
+
+    <button class="nav-btn" id="logoutBtn">Logout</button>
+  </nav>
+
+  <section class="dashboard-section premium-assistant-section">
+
+    <div class="premium-dashboard-hero">
+      <div>
+        <p class="insight-label">AI Career Operating System</p>
+
+        <h1>Your personal career strategist.</h1>
+
+        <p>
+          Ask JobReady for career direction, CV strategy, interview coaching,
+          salary growth, learning roadmaps, LinkedIn advice and job search plans.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="primary-btn prompt-btn">Create my next 30-day career plan</button>
+          <a href="career-profile.html" class="secondary-btn">Improve Career Profile</a>
+        </div>
+      </div>
+
+      <div class="dashboard-career-score-card">
+        <p class="insight-label">Personalisation</p>
+        <h2 id="memoryScore">0%</h2>
+        <span>Career memory strength</span>
+
+        <div class="career-score-bar">
+          <div id="memoryScoreBar"></div>
+        </div>
+
+        <p>
+          Fill in your career memory so the assistant can give sharper,
+          more personalised advice.
+        </p>
+      </div>
+    </div>
+
+    <div class="career-hero-grid">
+
+      <div class="panel-card assistant-mode-card">
+        <p class="insight-label">Choose Assistant Mode</p>
+        <h3>What do you need right now?</h3>
+
+        <div class="assistant-mode-grid">
+          <button class="assistant-mode-btn active-mode" data-mode="career">
+            Career Strategist
+          </button>
+
+          <button class="assistant-mode-btn" data-mode="recruiter">
+            Recruiter Review
+          </button>
+
+          <button class="assistant-mode-btn" data-mode="learning">
+            Learning Roadmap
+          </button>
+
+          <button class="assistant-mode-btn" data-mode="interview">
+            Interview Coach
+          </button>
+
+          <button class="assistant-mode-btn" data-mode="salary">
+            Salary Growth
+          </button>
+
+          <button class="assistant-mode-btn" data-mode="linkedin">
+            LinkedIn Strategy
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-card assistant-prompt-card">
+        <p class="insight-label">Smart Prompts</p>
+        <h3>Start with a high-value question</h3>
+
+        <div class="template-selector">
+          <button class="template-pill prompt-btn">Create a 6-month roadmap for data analytics</button>
+          <button class="template-pill prompt-btn">Review my career plan like a recruiter</button>
+          <button class="template-pill prompt-btn">What skills should I learn to earn £40k?</button>
+          <button class="template-pill prompt-btn">Create a weekly job search plan for me</button>
+          <button class="template-pill prompt-btn">What projects should I build for my portfolio?</button>
+          <button class="template-pill prompt-btn">How do I switch into tech from my current background?</button>
+          <button class="template-pill prompt-btn">Give me a LinkedIn content plan for 30 days</button>
+          <button class="template-pill prompt-btn">Prepare me for a realistic interview</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="assistant-command-strip">
+      <div>
+        <p class="insight-label">Current Career Memory</p>
+        <h2 id="memorySummaryTitle">No profile saved yet</h2>
+        <p id="memorySummaryText">
+          Add your target role, skills, salary goal and learning direction to make advice more personal.
+        </p>
+      </div>
+
+      <div class="dashboard-action-buttons">
+        <button class="secondary-action-btn prompt-btn">What is my next best move?</button>
+        <button class="generate-btn prompt-btn">Build my career strategy</button>
+      </div>
+    </div>
+
+    <div class="panel-card assistant-memory-panel">
+      <div class="chat-header-row">
+        <div>
+          <p class="insight-label">Career Profile Memory</p>
+          <h3>Train JobReady on your goals</h3>
+          <p>
+            Save your goals so JobReady can personalise every answer with your target role,
+            skills, experience and learning direction.
+          </p>
+        </div>
+      </div>
+
+      <div class="career-memory-grid">
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="memoryTargetRole" placeholder="Data Analyst, Cybersecurity Analyst, Software Engineer">
+        </div>
+
+        <div class="form-group">
+          <label>Current Level</label>
+          <input id="memoryCurrentLevel" placeholder="Beginner, student, graduate, junior, mid-level">
+        </div>
+
+        <div class="form-group">
+          <label>Current Skills</label>
+          <textarea id="memorySkills" placeholder="Excel, Python, customer service, communication..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Experience / Strengths</label>
+          <textarea id="memoryExperience" placeholder="Your work, education, projects or volunteering experience..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Salary Goal</label>
+          <input id="memorySalaryGoal" placeholder="£30k, £45k, £60k+">
+        </div>
+
+        <div class="form-group">
+          <label>Preferred Industry</label>
+          <input id="memoryIndustry" placeholder="Tech, finance, healthcare, business, engineering">
+        </div>
+
+        <div class="form-group">
+          <label>Learning Goal</label>
+          <textarea id="memoryLearningGoal" placeholder="What do you want to learn or become better at?"></textarea>
+        </div>
+      </div>
+
+      <button class="generate-btn" id="saveMemoryBtn">
+        Save Career Memory
+      </button>
+    </div>
+
+    <div class="panel-card assistant-chat-panel">
+
+      <div class="chat-header-row">
+        <div>
+          <p class="insight-label">Career Chat</p>
+          <h3>Ask for strategy, not generic advice</h3>
+          <p>Saved advice will appear here when you return.</p>
+        </div>
+
+        <button class="secondary-action-btn clear-chat-top" id="clearChatBtn">
+          Clear Chat
+        </button>
+      </div>
+
+      <div id="chatBox" class="career-chat-box premium-career-chat-box">
+        <div class="question-card assistant-message-card">
+          <h4>JobReady Assistant</h4>
+
+          <div class="assistant-rich-text">
+            <p>
+              Tell me your career goal, current skills, experience level and what you want help with.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top:25px;">
+        <label>Ask your career question</label>
+
+        <textarea
+          id="assistantInput"
+          placeholder="Example: I want to become a data analyst. What should I learn, what qualifications should I get, and what projects should I build?"
+        ></textarea>
+      </div>
+
+      <div class="chat-actions">
+        <button class="generate-btn" id="sendAssistantBtn">
+          Ask AI Career Assistant
+        </button>
+
+        <button class="secondary-action-btn" id="stopAssistantBtn" style="display:none;">
+          Stop Generating
+        </button>
+
+        <button class="secondary-action-btn" id="exportAssistantPdfBtn">
+          Export Career Plan PDF
+        </button>
+      </div>
+
+    </div>
+
+    <div class="career-future-grid" style="margin-top:25px;">
+
+      <div class="panel-card">
+        <h3>Resume Tailor</h3>
+        <p>Match your CV to a real job advert and uncover missing keywords.</p>
+        <a href="resume-tailor.html" class="dashboard-btn">Tailor CV</a>
+      </div>
+
+      <div class="panel-card">
+        <h3>Interview Simulator</h3>
+        <p>Practise role-specific questions and get strict recruiter feedback.</p>
+        <a href="interview-simulator.html" class="dashboard-btn">Practise</a>
+      </div>
+
+      <div class="panel-card">
+        <h3>LinkedIn Optimiser</h3>
+        <p>Improve your headline, About section and recruiter keywords.</p>
+        <a href="linkedin-optimiser.html" class="dashboard-btn">Optimise</a>
+      </div>
+
+      <div class="panel-card">
+        <h3>Job Tracker</h3>
+        <p>Track applications, match scores, interviews and follow-up actions.</p>
+        <a href="job-tracker.html" class="dashboard-btn">Track Jobs</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/career-assistant.js"></script>
+
+</body>
+
+</html>

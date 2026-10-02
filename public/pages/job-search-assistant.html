@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Job Search Assistant - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="my-cvs.html">My CVs</a>
+    <a href="cover-letters.html">Cover Letters</a>
+    <a href="interview.html">Interview Prep</a>
+    <a href="salary.html">Salary Path</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="learning-roadmap.html">Learning Roadmap</a>
+    <a href="linkedin-optimiser.html">LinkedIn Optimiser</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="job-search-assistant.html" class="active-nav">Job Search</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section">
+
+  <div class="dashboard-header">
+    <div>
+      <h1>AI Job Search Assistant</h1>
+      <p>Create a targeted job search strategy with keywords, job boards, weekly targets and networking actions.</p>
+    </div>
+  </div>
+
+  <div class="career-hero-grid">
+
+    <div class="panel-card career-hero-card">
+      <p class="insight-label">Search Strategy Engine</p>
+      <h2>Stop applying randomly. Search smarter.</h2>
+      <p>
+        JobReady builds a practical search plan based on your role, location, skills and preferred work style.
+      </p>
+
+      <div class="career-stat-row">
+        <div>
+          <strong>Keywords</strong>
+          <span>Better searches</span>
+        </div>
+
+        <div>
+          <strong>Targets</strong>
+          <span>Weekly goals</span>
+        </div>
+
+        <div>
+          <strong>Strategy</strong>
+          <span>Higher response rate</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-card">
+      <h3>Smart Search Prompts</h3>
+      <p>Use these to guide your strategy.</p>
+
+      <div class="template-selector">
+        <button class="template-pill search-prompt-btn">Find entry-level tech roles in London</button>
+        <button class="template-pill search-prompt-btn">Create a remote job search strategy</button>
+        <button class="template-pill search-prompt-btn">Help me find apprenticeships</button>
+        <button class="template-pill search-prompt-btn">Build a weekly job application plan</button>
+        <button class="template-pill search-prompt-btn">Suggest job titles I should search for</button>
+        <button class="template-pill search-prompt-btn">Improve my job search keywords</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="builder-container" style="padding:0; margin-top:30px; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card">
+        <h3>Create Job Search Plan</h3>
+        <p>Tell JobReady what you want and get a focused plan.</p>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="targetRoleInput" placeholder="Data Analyst, Software Engineer, Marketing Assistant">
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <input id="locationInput" placeholder="London, Manchester, Remote, United Kingdom">
+        </div>
+
+        <div class="form-group">
+          <label>Work Style</label>
+          <select id="workStyleInput" class="status-select">
+            <option>Any</option>
+            <option>Remote</option>
+            <option>Hybrid</option>
+            <option>On-site</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Experience Level</label>
+          <select id="experienceLevelInput" class="status-select">
+            <option>Entry-level</option>
+            <option>Student</option>
+            <option>Graduate</option>
+            <option>Career switcher</option>
+            <option>Junior</option>
+            <option>Mid-level</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Skills</label>
+          <textarea id="skillsInput" placeholder="Excel, Python, customer service, communication..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Extra Notes</label>
+          <textarea id="notesInput" placeholder="Industries, salary goals, visa needs, availability, preferred companies..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="generateSearchPlanBtn">
+          Generate Search Plan
+        </button>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="panel-card">
+        <h3>Your Job Search Plan</h3>
+        <p>Generated strategy will appear here and save automatically.</p>
+
+        <div id="searchPlanOutput" class="assistant-rich-text">
+          <p>No search plan generated yet.</p>
+        </div>
+
+        <div class="chat-actions" style="margin-top:20px;">
+          <button class="secondary-action-btn" id="copySearchPlanBtn">
+            Copy Plan
+          </button>
+
+          <button class="secondary-action-btn" id="exportSearchPlanBtn">
+            Export Text
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Saved Search Plans</h3>
+        <div id="savedSearchPlans">
+          <p>Loading saved plans...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/job-search-assistant.js"></script>
+
+</body>
+</html>

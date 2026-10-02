@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Job Tracker - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="my-cvs.html">My CVs</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="interview-simulator.html">Interview Simulator</a>
+    <a href="job-tracker.html" class="active-nav">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">
+    Logout
+  </button>
+</nav>
+
+<section class="dashboard-section premium-job-tracker-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Job Search Command Centre</p>
+
+      <h1>Track every application like a serious job seeker.</h1>
+
+      <p>
+        Save job adverts, analyse match quality, track each stage, prepare follow-ups
+        and understand which opportunities are most likely to move forward.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="analyseTopBtn">Analyse & Save Job</button>
+        <a href="resume-tailor.html" class="secondary-btn">Tailor CV First</a>
+      </div>
+
+      <div class="builder-mini-trust-row">
+        <span>Pipeline tracking</span>
+        <span>Match scoring</span>
+        <span>Follow-up planning</span>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Pipeline Strength</p>
+
+      <h2 id="pipelineStrength">0%</h2>
+
+      <span>Applications, interviews and match quality</span>
+
+      <div class="career-score-bar">
+        <div id="pipelineStrengthBar"></div>
+      </div>
+
+      <p>
+        Strong pipelines combine consistent applications with tailored, high-match CVs.
+      </p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Saved Jobs</p>
+      <h2 id="totalJobs">0</h2>
+      <span>Total roles tracked</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Interviews</p>
+      <h2 id="interviewJobs">0</h2>
+      <span>Roles reaching interview stage</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Best Match</p>
+      <h2 id="bestMatch">0%</h2>
+      <span>Your strongest saved opportunity</span>
+    </div>
+  </div>
+
+  <div class="career-score-breakdown-grid">
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Saved</p>
+      <h2 id="savedJobs">0</h2>
+      <div class="mini-progress"><div style="width:0%;"></div></div>
+      <span>Jobs not applied yet</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Applied</p>
+      <h2 id="appliedJobs">0</h2>
+      <div class="mini-progress"><div style="width:0%;"></div></div>
+      <span>Applications submitted</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Offers</p>
+      <h2 id="offerJobs">0</h2>
+      <div class="mini-progress"><div style="width:0%;"></div></div>
+      <span>Successful opportunities</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Next Best Action</p>
+      <h2 id="nextBestAction">Add Job</h2>
+      <span>Keep your pipeline moving</span>
+    </div>
+
+  </div>
+
+  <div class="dashboard-action-strip">
+    <div>
+      <p class="insight-label">Recommended Workflow</p>
+      <h2>Save → Analyse → Tailor → Apply → Follow Up</h2>
+      <p>
+        A strong pipeline is not just about applying more. It is about applying smarter,
+        tracking outcomes and improving weak matches before sending applications.
+      </p>
+    </div>
+
+    <div class="dashboard-action-buttons">
+      <a href="builder.html" class="secondary-action-btn">Fix CV First</a>
+      <a href="resume-tailor.html" class="generate-btn">Tailor CV</a>
+    </div>
+  </div>
+
+  <div class="builder-container job-tracker-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card job-input-card">
+        <p class="insight-label">Application Input</p>
+
+        <h3>Add Job Application</h3>
+
+        <p>
+          Save a role and analyse how strongly it matches your CV, experience and keywords.
+        </p>
+
+        <div class="form-group">
+          <label>Company</label>
+          <input id="companyInput" placeholder="Google, NHS, Barclays">
+        </div>
+
+        <div class="form-group">
+          <label>Job Title</label>
+          <input id="jobTitleInput" placeholder="Data Analyst">
+        </div>
+
+        <div class="form-group">
+          <label>Job Link</label>
+          <input id="jobLinkInput" placeholder="https://...">
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <input id="locationInput" placeholder="London, Remote, Manchester">
+        </div>
+
+        <div class="form-group">
+          <label>Salary</label>
+          <input id="salaryInput" placeholder="£30,000 - £40,000">
+        </div>
+
+        <div class="form-group">
+          <label>Deadline / Closing Date</label>
+          <input id="deadlineInput" type="date">
+        </div>
+
+        <div class="form-group">
+          <label>Status</label>
+          <select id="statusInput" class="status-select">
+            <option>Saved</option>
+            <option>Applied</option>
+            <option>Interview</option>
+            <option>Offer</option>
+            <option>Rejected</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Priority</label>
+          <select id="priorityInput" class="status-select">
+            <option>Medium</option>
+            <option>High</option>
+            <option>Low</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Job Description</label>
+          <textarea id="jobDescriptionInput" placeholder="Paste the job advert here..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Your CV Notes</label>
+          <textarea id="cvNotesInput" placeholder="Paste your CV summary, skills or relevant experience..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Application Notes</label>
+          <textarea id="applicationNotesInput" placeholder="Recruiter name, follow-up plan, interview date, requirements or reminders..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="analyseAndSaveBtn">
+          Analyse & Save Job
+        </button>
+      </div>
+
+      <div class="panel-card tracker-coach-card">
+        <p class="insight-label">Pipeline Coach</p>
+
+        <h3>Winning application habits</h3>
+
+        <div class="interview-tip-list">
+          <p><strong>Tailor first:</strong> improve your CV before applying.</p>
+          <p><strong>Prioritise high-fit roles:</strong> spend more time where your match is strongest.</p>
+          <p><strong>Track status:</strong> update each role after applying.</p>
+          <p><strong>Follow up:</strong> keep recruiters warm after a few days.</p>
+          <p><strong>Review misses:</strong> weak matches need stronger keywords.</p>
+        </div>
+      </div>
+
+      <div class="panel-card tracker-coach-card">
+        <p class="insight-label">Application Quality</p>
+
+        <h3>Before you apply</h3>
+
+        <div class="interview-tip-list">
+          <p>Is the CV tailored to this advert?</p>
+          <p>Does the summary match the role?</p>
+          <p>Are the required skills visible?</p>
+          <p>Have you saved the job link?</p>
+          <p>Do you know when to follow up?</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="panel-card match-card">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">AI Job Match Feedback</p>
+            <h3>Application strategy</h3>
+          </div>
+
+          <span class="product-status-pill">Match intelligence</span>
+        </div>
+
+        <p>
+          JobReady shows your match score, missing keywords, cover letter angle,
+          interview risks and smarter application strategy.
+        </p>
+
+        <div id="jobFeedbackOutput" class="assistant-rich-text job-feedback-box">
+          <p>No job analysed yet. Add a job advert and your CV notes to generate feedback.</p>
+        </div>
+      </div>
+
+      <div class="dashboard-analytics-grid" style="margin-top:25px;">
+
+        <div class="panel-card analytics-card">
+          <p class="insight-label">Application Funnel</p>
+          <h3>What to monitor</h3>
+
+          <div class="funnel-row">
+            <span>Saved to Applied</span>
+            <strong>Track</strong>
+          </div>
+
+          <div class="funnel-row">
+            <span>Applied to Interview</span>
+            <strong>Improve</strong>
+          </div>
+
+          <div class="funnel-row">
+            <span>Interview to Offer</span>
+            <strong>Prepare</strong>
+          </div>
+
+          <div class="funnel-row">
+            <span>Rejected Roles</span>
+            <strong>Learn</strong>
+          </div>
+        </div>
+
+        <div class="panel-card analytics-card">
+          <p class="insight-label">Follow-up Reminder</p>
+          <h3>Suggested follow-up timing</h3>
+
+          <div class="weekly-goal-ring">
+            <strong>5-7</strong>
+            <span>days after applying</span>
+          </div>
+
+          <p>
+            For professional roles, follow up politely if the advert is still open and you have not heard back.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <div class="chat-header-row">
+          <div>
+            <p class="insight-label">Saved Applications</p>
+            <h3>Your tracked opportunities</h3>
+            <p>Review roles, update status and keep your pipeline moving.</p>
+          </div>
+
+          <button class="secondary-action-btn" id="scrollToAddJobBtn">
+            Add Another Job
+          </button>
+        </div>
+
+        <div id="jobList">
+          <p>Loading jobs...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/job-tracker.js"></script>
+<script src="/js/live-premium.js"></script>
+
+</body>
+
+</html>

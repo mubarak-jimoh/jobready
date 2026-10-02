@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Dashboard - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html" class="active-nav">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="resume-examples.html">CV Examples</a>
+    <a href="resume-upload.html">Upload CV</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="interview-simulator.html">Interview Simulator</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="public-profile.html">Public Profile</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-dashboard-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Career Command Centre</p>
+
+      <h1>Your job search, CV strength and application progress in one place.</h1>
+
+      <p>
+        Build stronger CVs, track applications, monitor interview progress and follow your next best action.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="builder.html" class="primary-btn">Build New CV</a>
+        <a href="resume-upload.html" class="secondary-btn">Upload Existing CV</a>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">JobReady Score</p>
+
+      <h2 id="careerScore">0</h2>
+      <span id="careerScoreLabel">Getting started</span>
+
+      <div class="career-score-bar">
+        <div id="careerScoreBar"></div>
+      </div>
+
+      <p id="careerScoreAdvice">
+        Complete your CV, tailor it to jobs and track applications to improve your score.
+      </p>
+    </div>
+  </div>
+
+  <div class="career-score-breakdown-grid">
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">CV Strength</p>
+      <h2 id="cvStrengthScore">0%</h2>
+      <div class="mini-progress"><div id="cvStrengthBar"></div></div>
+      <span>CV quality, ATS score and saved versions</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Application Momentum</p>
+      <h2 id="momentumScore">0%</h2>
+      <div class="mini-progress"><div id="momentumBar"></div></div>
+      <span>Applications, consistency and weekly activity</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Interview Readiness</p>
+      <h2 id="interviewReadinessScore">0%</h2>
+      <div class="mini-progress"><div id="interviewReadinessBar"></div></div>
+      <span>Interview practice and conversion progress</span>
+    </div>
+
+    <div class="score-breakdown-card">
+      <p class="insight-label">Profile Power</p>
+      <h2 id="profilePowerScore">0%</h2>
+      <div class="mini-progress"><div id="profilePowerBar"></div></div>
+      <span>Career profile, LinkedIn and public profile</span>
+    </div>
+
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Saved CVs</p>
+      <h2 id="cvCount">0</h2>
+      <span>Your created CV library</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Highest ATS Score</p>
+      <h2 id="bestScore">0%</h2>
+      <span>Your strongest CV score</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Average Match Score</p>
+      <h2 id="avgMatch">0%</h2>
+      <span>Average job advert match</span>
+    </div>
+  </div>
+
+  <div class="career-command-grid">
+
+    <div class="command-card">
+      <p class="insight-label">Applications Sent</p>
+      <h2 id="applicationsSent">0</h2>
+      <span>Track weekly momentum</span>
+    </div>
+
+    <div class="command-card">
+      <p class="insight-label">Interview Rate</p>
+      <h2 id="interviewRate">0%</h2>
+      <span>Application conversion</span>
+    </div>
+
+    <div class="command-card">
+      <p class="insight-label">Offer Rate</p>
+      <h2 id="offerRate">0%</h2>
+      <span>Offers from applications</span>
+    </div>
+
+    <div class="command-card">
+      <p class="insight-label">Career Streak</p>
+      <h2 id="careerStreak">0 Days</h2>
+      <span>Consistency compounds</span>
+    </div>
+
+  </div>
+
+  <div class="dashboard-action-strip">
+    <div>
+      <p class="insight-label">Recommended Workflow</p>
+      <h2>Build → Fix → Tailor → Apply → Track</h2>
+      <p id="workflowAdvice">
+        Strong applications are targeted. Build your CV, fix weak sections, tailor it to the job and track every opportunity.
+      </p>
+    </div>
+
+    <div class="dashboard-action-buttons">
+      <a href="builder.html" class="secondary-action-btn">Fix My CV</a>
+      <a href="resume-tailor.html" class="generate-btn">Tailor to Job</a>
+    </div>
+  </div>
+
+  <div class="dashboard-analytics-grid">
+
+    <div class="panel-card analytics-card">
+      <p class="insight-label">Career Funnel</p>
+      <h3>Application Pipeline</h3>
+
+      <div class="funnel-row">
+        <span>Saved Jobs</span>
+        <strong id="savedJobsCount">0</strong>
+      </div>
+
+      <div class="funnel-row">
+        <span>Applied</span>
+        <strong id="appliedJobsCount">0</strong>
+      </div>
+
+      <div class="funnel-row">
+        <span>Interviews</span>
+        <strong id="interviewJobsCount">0</strong>
+      </div>
+
+      <div class="funnel-row">
+        <span>Offers</span>
+        <strong id="offerJobsCount">0</strong>
+      </div>
+    </div>
+
+    <div class="panel-card analytics-card">
+      <p class="insight-label">Profile Analytics</p>
+      <h3>Recruiter Visibility</h3>
+
+      <div class="analytics-stat-row">
+        <div>
+          <span>Public Profiles</span>
+          <strong id="publicProfileCount">0</strong>
+        </div>
+
+        <div>
+          <span>LinkedIn Reviews</span>
+          <strong id="linkedinReviewCount">0</strong>
+        </div>
+      </div>
+
+      <p id="profileVisibilityAdvice">
+        Create a public profile and optimise LinkedIn to improve recruiter visibility.
+      </p>
+    </div>
+
+    <div class="panel-card analytics-card">
+      <p class="insight-label">Weekly Goal</p>
+      <h3>Job Search Target</h3>
+
+      <div class="weekly-goal-ring">
+        <strong id="weeklyProgress">0%</strong>
+        <span id="weeklyGoalText">0 / 5 actions complete</span>
+      </div>
+
+      <p>
+        Complete weekly career actions: build, tailor, practise, apply and follow up.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="career-command-grid">
+
+    <div class="command-card">
+      <p class="insight-label">CV Downloads</p>
+      <h2 id="downloadCount">0</h2>
+      <span>Saved export activity</span>
+    </div>
+
+    <div class="command-card">
+      <p class="insight-label">Tailoring Reports</p>
+      <h2 id="tailorReportCount">0</h2>
+      <span>CVs matched to jobs</span>
+    </div>
+
+    <div class="command-card">
+      <p class="insight-label">Interview Sessions</p>
+      <h2 id="interviewSessionCount">0</h2>
+      <span>Practice completed</span>
+    </div>
+
+    <div class="command-card premium-command-card">
+      <p class="insight-label">Next Best Action</p>
+      <h2 id="nextBestActionTitle">Build CV</h2>
+      <span id="nextBestActionText">Create your first recruiter-ready CV</span>
+    </div>
+
+  </div>
+
+  <div class="panel-card next-actions-panel">
+    <div class="chat-header-row">
+      <div>
+        <p class="insight-label">Next Best Actions</p>
+        <h3>Your personalised action plan</h3>
+        <p>Complete these to improve your JobReady Score and application quality.</p>
+      </div>
+
+      <a href="career-assistant.html" class="dashboard-btn">Ask AI Assistant</a>
+    </div>
+
+    <div id="nextActionsList" class="next-actions-list"></div>
+  </div>
+
+  <div class="feature-section-title">
+    <h2>Your Career Toolkit</h2>
+    <p>Everything you need to build, improve, tailor and track your applications.</p>
+  </div>
+
+  <div class="cv-grid premium-dashboard-toolkit">
+
+    <div class="cv-card dashboard-tool-card feature-card-primary">
+      <span class="tool-icon">01</span>
+      <h3>AI CV Builder</h3>
+      <p>Create recruiter-ready CVs with ATS scoring, AI fixing, templates and PDF export.</p>
+      <div class="cv-card-actions">
+        <a href="builder.html" class="dashboard-btn">Open Builder</a>
+      </div>
+    </div>
+
+    <div class="cv-card dashboard-tool-card">
+      <span class="tool-icon">02</span>
+      <h3>Upload Existing CV</h3>
+      <p>Import a PDF or Word CV and rebuild it inside JobReady.</p>
+      <div class="cv-card-actions">
+        <a href="resume-upload.html" class="dashboard-btn">Upload CV</a>
+      </div>
+    </div>
+
+    <div class="cv-card dashboard-tool-card">
+      <span class="tool-icon">03</span>
+      <h3>Resume Tailor</h3>
+      <p>Tailor your CV to a specific job advert with missing keywords and recruiter advice.</p>
+      <div class="cv-card-actions">
+        <a href="resume-tailor.html" class="dashboard-btn">Tailor CV</a>
+      </div>
+    </div>
+
+    <div class="cv-card dashboard-tool-card">
+      <span class="tool-icon">04</span>
+      <h3>Premium Templates</h3>
+      <p>Choose polished CV layouts built for different roles and industries.</p>
+      <div class="cv-card-actions">
+        <a href="templates.html" class="dashboard-btn">View Templates</a>
+      </div>
+    </div>
+
+    <div class="cv-card dashboard-tool-card">
+      <span class="tool-icon">05</span>
+      <h3>CV Examples</h3>
+      <p>Start from role-specific examples instead of a blank page.</p>
+      <div class="cv-card-actions">
+        <a href="templates.html#cvExamplesSection" class="dashboard-btn">View Examples</a>
+      </div>
+    </div>
+
+    <div class="cv-card dashboard-tool-card feature-card-primary">
+      <span class="tool-icon">06</span>
+      <h3>Interview Simulator</h3>
+      <p>Practise realistic interviews and get recruiter-style scoring.</p>
+      <div class="cv-card-actions">
+        <a href="interview-simulator.html" class="dashboard-btn">Start Practice</a>
+      </div>
+    </div>
+
+    <div class="cv-card dashboard-tool-card">
+      <span class="tool-icon">07</span>
+      <h3>Job Tracker</h3>
+      <p>Track applications, interviews, offers and follow-up progress.</p>
+      <div class="cv-card-actions">
+        <a href="job-tracker.html" class="dashboard-btn">Track Jobs</a>
+      </div>
+    </div>
+
+    <div class="cv-card dashboard-tool-card">
+      <span class="tool-icon">08</span>
+      <h3>Public Profile</h3>
+      <p>Create a shareable recruiter profile with your skills, projects and links.</p>
+      <div class="cv-card-actions">
+        <a href="public-profile.html" class="dashboard-btn">Edit Profile</a>
+      </div>
+    </div>
+
+    <div class="cv-card dashboard-tool-card">
+      <span class="tool-icon">09</span>
+      <h3>AI Career Assistant</h3>
+      <p>Ask questions about CVs, skills, qualifications, projects and job strategy.</p>
+      <div class="cv-card-actions">
+        <a href="career-assistant.html" class="dashboard-btn">Ask Assistant</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dashboard-bottom-grid">
+
+    <div class="panel-card">
+      <h3 style="margin-bottom:20px;">Recent CV Activity</h3>
+
+      <div id="recentCvList">
+        <p>Loading recent CVs...</p>
+      </div>
+    </div>
+
+    <div class="panel-card dashboard-premium-nudge">
+      <p class="insight-label">Premium Advantage</p>
+      <h3>Unlock the full JobReady system</h3>
+      <p>
+        Premium gives you more AI usage, advanced CV scoring, resume tailoring,
+        cover letters, interview tools and premium templates.
+      </p>
+
+      <a href="pricing.html" class="dashboard-btn">View Premium</a>
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/dashboard.js"></script>
+<script src="/js/live-premium.js"></script>
+
+</body>
+
+</html>

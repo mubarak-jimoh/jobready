@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Career Profile - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="interview-simulator.html">Interview Simulator</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="learning-roadmap.html">Learning Roadmap</a>
+    <a href="career-profile.html" class="active-nav">Career Profile</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-career-profile-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Career Identity</p>
+
+      <h1>Train JobReady to understand your career.</h1>
+
+      <p>
+        Save your goals, skills, target salary, strengths and weaknesses so every AI tool
+        can give sharper, more personalised career advice.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="saveProfileTopBtn">Save Career Identity</button>
+        <a href="career-assistant.html" class="secondary-btn">Ask AI Assistant</a>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Profile Strength</p>
+      <h2 id="profileStrength">0%</h2>
+      <span>Personalisation quality</span>
+
+      <div class="career-score-bar">
+        <div id="profileStrengthBar"></div>
+      </div>
+
+      <p>
+        A complete profile improves CV advice, roadmaps, interview coaching and career strategy.
+      </p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Target Role</p>
+      <h2 id="targetRoleStat">Unset</h2>
+      <span>Your main career direction</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Salary Goal</p>
+      <h2 id="salaryGoalStat">Unset</h2>
+      <span>Your progression target</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Experience Level</p>
+      <h2 id="levelStat">Unset</h2>
+      <span>Current career stage</span>
+    </div>
+  </div>
+
+  <div class="builder-container career-profile-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card career-profile-input-card">
+        <p class="insight-label">Career Memory</p>
+        <h3>Build your profile</h3>
+        <p>This becomes the personal context behind your JobReady AI tools.</p>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input type="text" id="targetRole" placeholder="e.g. Data Analyst">
+        </div>
+
+        <div class="form-group">
+          <label>Target Salary</label>
+          <input type="text" id="targetSalary" placeholder="e.g. £55,000">
+        </div>
+
+        <div class="form-group">
+          <label>Experience Level</label>
+          <select id="experienceLevel" class="status-select">
+            <option value="">Select level</option>
+            <option>Beginner</option>
+            <option>Student</option>
+            <option>Graduate</option>
+            <option>Junior</option>
+            <option>Mid-Level</option>
+            <option>Senior</option>
+            <option>Lead</option>
+            <option>Career Switcher</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Current Skills</label>
+          <textarea id="currentSkills" placeholder="SQL, Excel, Python, communication..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Industries</label>
+          <textarea id="industries" placeholder="Finance, tech, healthcare, business..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Strengths</label>
+          <textarea id="strengths" placeholder="Problem solving, leadership, customer service..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Weaknesses / Gaps</label>
+          <textarea id="weaknesses" placeholder="Public speaking, lack of experience, technical gaps..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Learning Goal</label>
+          <textarea id="learningGoal" placeholder="Become job-ready within 6 months..."></textarea>
+        </div>
+
+        <button id="saveProfileBtn" class="generate-btn">
+          Save Career Identity
+        </button>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="tailor-intelligence-grid">
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">AI Memory</p>
+          <h3 id="memoryStatus">Incomplete</h3>
+          <span>Personalisation status</span>
+        </div>
+
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Next Action</p>
+          <h3 id="nextAction">Add details</h3>
+          <span>Recommended improvement</span>
+        </div>
+      </div>
+
+      <div class="panel-card linkedin-score-card">
+        <p class="insight-label">AI Career Intelligence</p>
+
+        <h2>Personalised JobReady</h2>
+
+        <p>
+          Your profile helps JobReady understand your career goal, skills,
+          weaknesses, salary target and learning path.
+        </p>
+
+        <div class="career-stat-row">
+          <div>
+            <strong>Career Goals</strong>
+            <span>Target role and salary</span>
+          </div>
+
+          <div>
+            <strong>Strengths</strong>
+            <span>Skills and advantages</span>
+          </div>
+
+          <div>
+            <strong>Weaknesses</strong>
+            <span>Growth opportunities</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-card career-profile-preview-card" style="margin-top:25px;">
+        <h3>Your Career Snapshot</h3>
+
+        <div id="profilePreview" class="assistant-rich-text linkedin-output-box">
+          <p>No career profile saved yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Recommended Next Steps</h3>
+
+        <div class="career-profile-actions">
+          <a href="resume-tailor.html" class="dashboard-btn">Tailor CV</a>
+          <a href="learning-roadmap.html" class="secondary-action-btn">Build Roadmap</a>
+          <a href="interview-simulator.html" class="secondary-action-btn">Practise Interview</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/career-profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Application Assistant - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="application-assistant.html" class="active-nav">Application Assistant</a>
+    <a href="interview-live.html">Live Interview</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-application-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Application Assistant</p>
+      <h1>Generate stronger application answers in minutes.</h1>
+      <p>
+        Paste a job advert, apprenticeship brief or graduate scheme question.
+        JobReady creates tailored answers, STAR examples, recruiter outreach and interview prep.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="generateTopBtn">Generate Application Pack</button>
+        <a href="job-tracker.html" class="secondary-btn">Track Applications</a>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Application Strength</p>
+      <h2 id="applicationStrength">0%</h2>
+      <span>Readiness score</span>
+
+      <div class="career-score-bar">
+        <div id="applicationStrengthBar"></div>
+      </div>
+
+      <p>
+        Strong applications combine role fit, evidence, motivation and employer research.
+      </p>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div>
+      <strong>10,000+</strong>
+      <span>CVs generated</span>
+    </div>
+
+    <div>
+      <strong>92%</strong>
+      <span>Average target ATS goal</span>
+    </div>
+
+    <div>
+      <strong>24/7</strong>
+      <span>AI career support</span>
+    </div>
+
+    <div>
+      <strong>Built for</strong>
+      <span>students, graduates and job seekers</span>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Match Score</p>
+      <h2 id="matchScore">0%</h2>
+      <span>How closely you fit</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Saved Packs</p>
+      <h2 id="savedCount">0</h2>
+      <span>Application reports created</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Application Type</p>
+      <h2 id="applicationTypeStat">Unset</h2>
+      <span>Current mode</span>
+    </div>
+  </div>
+
+  <div class="builder-container application-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card application-input-card">
+        <p class="insight-label">Input</p>
+        <h3>Build your application pack</h3>
+        <p>Paste the job details and your background. JobReady will produce a full strategy.</p>
+
+        <div class="form-group">
+          <label>Application Type</label>
+          <select id="applicationTypeInput" class="status-select">
+            <option>Job Application</option>
+            <option>Apprenticeship</option>
+            <option>Degree Apprenticeship</option>
+            <option>Graduate Scheme</option>
+            <option>Internship</option>
+            <option>Placement Year</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Company</label>
+          <input id="companyInput" placeholder="NHS, Barclays, Google, local employer">
+        </div>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="targetRoleInput" placeholder="Data Analyst Apprentice">
+        </div>
+
+        <div class="form-group">
+          <label>Job Advert / Application Question</label>
+          <textarea id="jobDescriptionInput" placeholder="Paste the advert or application question here..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Your Background</label>
+          <textarea id="backgroundInput" placeholder="Your skills, education, work experience, projects, achievements..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="generateBtn">
+          Generate Application Pack
+        </button>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="tailor-intelligence-grid">
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Priority</p>
+          <h3 id="priorityStatus">Add advert</h3>
+          <span>What to improve first</span>
+        </div>
+
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Output</p>
+          <h3>Full Pack</h3>
+          <span>Answers, email, LinkedIn, prep</span>
+        </div>
+      </div>
+
+      <div class="panel-card match-card">
+        <h3>AI Application Pack</h3>
+        <p>Your generated application strategy will appear here.</p>
+
+        <div id="applicationOutput" class="assistant-rich-text application-output-box">
+          <p>No application pack generated yet.</p>
+        </div>
+
+        <button class="secondary-action-btn" id="copyOutputBtn" style="margin-top:16px;">
+          Copy Full Pack
+        </button>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Saved Application Packs</h3>
+
+        <div id="savedReportsList">
+          <p>Loading saved packs...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/application-assistant.js"></script>
+
+</body>
+
+</html>

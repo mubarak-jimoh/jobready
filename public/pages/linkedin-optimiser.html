@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>LinkedIn Optimiser - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="templates.html">Templates</a>
+    <a href="my-cvs.html">My CVs</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="interview-simulator.html">Interview Simulator</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="linkedin-optimiser.html" class="active-nav">LinkedIn Optimiser</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-linkedin-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">LinkedIn Growth Engine</p>
+
+      <h1>Turn your profile into a recruiter magnet.</h1>
+
+      <p>
+        Improve your headline, About section, recruiter keywords and professional positioning
+        so employers understand your value faster.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="analyseLinkedinTopBtn">Analyse Profile</button>
+        <a href="career-assistant.html" class="secondary-btn">Ask AI Assistant</a>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Recruiter Visibility</p>
+      <h2 id="heroProfileScore">0%</h2>
+      <span id="heroProfileLabel">Not analysed yet</span>
+
+      <div class="career-score-bar">
+        <div id="linkedinScoreBar"></div>
+      </div>
+
+      <p id="heroProfileAdvice">
+        Strong LinkedIn profiles make your target role obvious within seconds.
+      </p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Profile Score</p>
+      <h2 id="profileScore">0%</h2>
+      <span>Overall profile quality</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Recruiter Score</p>
+      <h2 id="recruiterScore">0%</h2>
+      <span>Recruiter clarity and positioning</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Keyword Strength</p>
+      <h2 id="keywordStrength">0%</h2>
+      <span>Search visibility strength</span>
+    </div>
+  </div>
+
+  <div class="builder-container linkedin-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card linkedin-input-card">
+        <p class="insight-label">Profile Input</p>
+        <h3>Optimise your LinkedIn</h3>
+        <p>Paste your current profile content and your target role.</p>
+
+        <div class="form-group">
+          <label>Full Name</label>
+          <input id="fullNameInput" placeholder="Your name">
+        </div>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="targetRoleInput" placeholder="Data Analyst, Software Engineer, Marketing Assistant">
+        </div>
+
+        <div class="form-group">
+          <label>Target Industry</label>
+          <input id="industryInput" placeholder="Tech, finance, healthcare, retail, marketing">
+        </div>
+
+        <div class="form-group">
+          <label>Current Headline</label>
+          <textarea id="headlineInput" placeholder="Paste your current LinkedIn headline..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>About Section</label>
+          <textarea id="aboutInput" placeholder="Paste your LinkedIn About section..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Experience Summary</label>
+          <textarea id="experienceInput" placeholder="Paste your experience, achievements or background..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Skills</label>
+          <textarea id="skillsInput" placeholder="Excel, SQL, Python, leadership, customer service..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Projects / Proof</label>
+          <textarea id="projectsInput" placeholder="Dashboards, websites, coursework, portfolio projects, volunteering..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="analyseLinkedinBtn">
+          Analyse LinkedIn Profile
+        </button>
+      </div>
+
+      <div class="panel-card linkedin-coach-card">
+        <h3>Profile rules that matter</h3>
+
+        <div class="interview-tip-list">
+          <p><strong>Headline:</strong> make your target role instantly clear.</p>
+          <p><strong>About:</strong> show skills, evidence and career direction.</p>
+          <p><strong>Keywords:</strong> use terms recruiters actually search.</p>
+          <p><strong>Proof:</strong> mention projects, tools and outcomes.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="tailor-intelligence-grid">
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Recruiter Keywords</p>
+          <h3 id="keywordCount">0</h3>
+          <span>Recommended search terms</span>
+        </div>
+
+        <div class="panel-card tailor-mini-card">
+          <p class="insight-label">Priority</p>
+          <h3 id="priorityStatus">Not analysed</h3>
+          <span>What to improve first</span>
+        </div>
+      </div>
+
+      <div class="panel-card linkedin-score-card">
+        <p class="insight-label">Recruiter Positioning</p>
+        <h2>Profile Intelligence</h2>
+        <p>
+          JobReady scores how clearly your LinkedIn profile communicates
+          your target role, strengths, keywords and recruiter value.
+        </p>
+      </div>
+
+      <div class="panel-card linkedin-breakdown-card" style="margin-top:25px;">
+        <h3>Profile Breakdown</h3>
+
+        <div class="linkedin-breakdown-grid">
+          <div>
+            <span>Headline Clarity</span>
+            <strong id="headlineClarityScore">0%</strong>
+          </div>
+
+          <div>
+            <span>About Strength</span>
+            <strong id="aboutStrengthScore">0%</strong>
+          </div>
+
+          <div>
+            <span>Proof & Evidence</span>
+            <strong id="proofScore">0%</strong>
+          </div>
+
+          <div>
+            <span>Networking Readiness</span>
+            <strong id="networkingScore">0%</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>AI Feedback</h3>
+
+        <div id="feedbackOutput" class="assistant-rich-text linkedin-output-box">
+          <p>No LinkedIn feedback yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Improved Headline</h3>
+
+        <div id="headlineOutput" class="linkedin-output-box">
+          <p>No improved headline yet.</p>
+        </div>
+
+        <button class="secondary-action-btn" id="copyHeadlineBtn" style="margin-top:16px;">
+          Copy Headline
+        </button>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Improved About Section</h3>
+
+        <div id="aboutOutput" class="assistant-rich-text linkedin-output-box">
+          <p>No improved About section yet.</p>
+        </div>
+
+        <button class="secondary-action-btn" id="copyAboutBtn" style="margin-top:16px;">
+          Copy About Section
+        </button>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Recruiter Keywords</h3>
+
+        <div id="keywordsOutput" class="keyword-chip-row">
+          <p>No keywords yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Networking Messages</h3>
+
+        <div id="networkingOutput" class="assistant-rich-text linkedin-output-box">
+          <p>No networking messages yet.</p>
+        </div>
+
+        <button class="secondary-action-btn" id="copyNetworkingBtn" style="margin-top:16px;">
+          Copy Messages
+        </button>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Saved LinkedIn Reviews</h3>
+
+        <div id="savedReviewsList">
+          <p>Loading saved reviews...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/linkedin-optimiser.js"></script>
+
+</body>
+
+</html>

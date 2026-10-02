@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Live AI Interview - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">JobReady</div>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="builder.html">Builder</a>
+    <a href="resume-tailor.html">Resume Tailor</a>
+    <a href="interview-simulator.html">Interview Simulator</a>
+    <a href="interview-live.html" class="active-nav">Live Interview</a>
+    <a href="job-tracker.html">Job Tracker</a>
+    <a href="career-assistant.html">AI Assistant</a>
+    <a href="account.html">Account</a>
+  </div>
+
+  <button class="nav-btn" id="logoutBtn">Logout</button>
+</nav>
+
+<section class="dashboard-section premium-live-interview-section">
+
+  <div class="premium-dashboard-hero">
+    <div>
+      <p class="insight-label">Live AI Interview Mode</p>
+
+      <h1>Practise with your camera, mic and pressure timer.</h1>
+
+      <p>
+        Simulate a real interview environment. Turn on your camera, answer out loud,
+        record your response and get strict recruiter-style feedback.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" id="startCameraBtn">Start Camera & Mic</button>
+        <button class="secondary-btn" id="generateQuestionBtn">Generate Question</button>
+      </div>
+    </div>
+
+    <div class="dashboard-career-score-card">
+      <p class="insight-label">Live Interview Score</p>
+      <h2 id="liveScore">0%</h2>
+      <span>Speaking + answer quality</span>
+
+      <div class="career-score-bar">
+        <div id="liveScoreBar"></div>
+      </div>
+
+      <p>
+        Improve your confidence, clarity, structure and evidence before the real interview.
+      </p>
+    </div>
+  </div>
+
+  <div class="insight-panel premium-insight-panel">
+    <div>
+      <p class="insight-label">Timer</p>
+      <h2 id="timerDisplay">90s</h2>
+      <span>Answer countdown</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Filler Words</p>
+      <h2 id="fillerCount">0</h2>
+      <span>Um, like, basically...</span>
+    </div>
+
+    <div>
+      <p class="insight-label">Confidence</p>
+      <h2 id="confidenceScore">0%</h2>
+      <span>Delivery estimate</span>
+    </div>
+  </div>
+
+  <div class="builder-container live-interview-layout" style="padding:0; grid-template-columns:420px 1fr;">
+
+    <div class="builder-left">
+
+      <div class="panel-card live-setup-card">
+        <p class="insight-label">Interview Setup</p>
+        <h3>Configure your mock interview</h3>
+
+        <div class="form-group">
+          <label>Target Role</label>
+          <input id="jobTitleInput" placeholder="Data Analyst, Software Engineer, Marketing Assistant">
+        </div>
+
+        <div class="form-group">
+          <label>Interview Type</label>
+          <select id="interviewTypeInput" class="status-select">
+            <option>Behavioural</option>
+            <option>Competency</option>
+            <option>Technical</option>
+            <option>Graduate</option>
+            <option>Apprenticeship</option>
+            <option>Career Switcher</option>
+            <option>Leadership</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Difficulty</label>
+          <select id="difficultyInput" class="status-select">
+            <option>Realistic</option>
+            <option>Hard</option>
+            <option>Pressure Mode</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Answer Time</label>
+          <select id="timerInput" class="status-select">
+            <option value="60">60 seconds</option>
+            <option value="90" selected>90 seconds</option>
+            <option value="120">120 seconds</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Job Context</label>
+          <textarea id="contextInput" placeholder="Paste job advert, skills, experience or anything the interviewer should know..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="generateQuestionSideBtn">
+          Generate Interview Question
+        </button>
+      </div>
+
+      <div class="panel-card live-coach-card">
+        <h3>Live interview rules</h3>
+
+        <div class="interview-tip-list">
+          <p><strong>Look up:</strong> practise eye contact with the camera.</p>
+          <p><strong>Use STAR:</strong> Situation, Task, Action, Result.</p>
+          <p><strong>Be concise:</strong> answer clearly before the timer ends.</p>
+          <p><strong>Give proof:</strong> mention outcomes, numbers or examples.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-right">
+
+      <div class="live-interview-grid">
+
+        <div class="panel-card live-video-card">
+          <div class="chat-header-row">
+            <div>
+              <p class="insight-label">Camera Preview</p>
+              <h3>Real interview environment</h3>
+            </div>
+
+            <span class="product-status-pill" id="cameraStatus">Camera off</span>
+          </div>
+
+          <video id="cameraPreview" autoplay playsinline muted></video>
+
+          <div class="live-control-row">
+            <button class="generate-btn" id="startRecordingBtn" disabled>Start Answer</button>
+            <button class="secondary-action-btn" id="stopRecordingBtn" disabled>Stop</button>
+          </div>
+        </div>
+
+        <div class="panel-card live-question-card">
+          <p class="insight-label">Current Question</p>
+          <h3>Interviewer</h3>
+
+          <div id="questionOutput" class="question-card interview-question-box">
+            <h4>Question</h4>
+            <p>Generate a question to begin.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Transcript</h3>
+
+        <div id="transcriptOutput" class="linkedin-output-box">
+          <p>Your spoken answer transcript will appear here.</p>
+        </div>
+
+        <div class="form-group" style="margin-top:18px;">
+          <label>Edit Transcript Before Feedback</label>
+          <textarea id="manualTranscriptInput" placeholder="If speech recognition misses anything, edit or paste your answer here..."></textarea>
+        </div>
+
+        <button class="generate-btn" id="analyseAnswerBtn">
+          Analyse Live Answer
+        </button>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Recruiter Feedback</h3>
+
+        <div id="feedbackOutput" class="assistant-rich-text live-feedback-box">
+          <p>No feedback yet.</p>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-top:25px;">
+        <h3>Live Interview History</h3>
+
+        <div id="historyList">
+          <p>Loading history...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module" src="/js/interview-live.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Saved Cover Letters - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">JobReady</div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="builder.html">Builder</a>
+      <a href="templates.html">Templates</a>
+      <a href="my-cvs.html">My CVs</a>
+      <a href="cover-letters.html">Cover Letters</a>
+      <a href="interview.html">Interview Prep</a>
+      <a href="salary.html">Salary Path</a>
+      <a href="jobs.html">Job Tracker</a>
+      <a href="career-chat.html">Career Coach</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+
+    <button class="nav-btn" id="logoutBtn">Logout</button>
+  </nav>
+
+  <section class="dashboard-section">
+
+    <div class="dashboard-header">
+      <div>
+        <h1>Saved Cover Letters</h1>
+        <p>View, copy, and manage the cover letters you generate with JobReady.</p>
+      </div>
+
+      <a href="builder.html" class="dashboard-btn">
+        Generate New Letter
+      </a>
+    </div>
+
+    <div id="coverLetterList" class="cv-grid">
+      <p>Loading cover letters...</p>
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/cover-letters.js"></script>
+
+</body>
+
+</html>

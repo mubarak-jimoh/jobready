@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Job Tracker - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="logo">
+      JobReady
+    </div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="builder.html">Builder</a>
+      <a href="my-cvs.html">My CVs</a>
+      <a href="interview.html">Interview Prep</a>
+      <a href="salary.html">Salary Path</a>
+      <a href="jobs.html">Job Tracker</a>
+    </div>
+
+    <button class="nav-btn" id="logoutBtn">
+      Logout
+    </button>
+
+  </nav>
+
+  <section class="dashboard-section">
+
+    <div class="dashboard-header">
+
+      <div>
+        <h1>Job Application Tracker</h1>
+        <p>
+          Track applications, interviews, offers, and progress.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="builder-container">
+
+      <div class="builder-left">
+
+        <div class="panel-card">
+
+          <h3>Add Job Application</h3>
+
+          <div class="form-group">
+            <label>Company</label>
+            <input id="companyInput" type="text" placeholder="Google">
+          </div>
+
+          <div class="form-group">
+            <label>Role</label>
+            <input id="roleInput" type="text" placeholder="Frontend Developer">
+          </div>
+
+          <div class="form-group">
+            <label>Status</label>
+
+            <select id="statusInput" class="status-select">
+              <option>Saved</option>
+              <option>Applied</option>
+              <option>Interview</option>
+              <option>Offer</option>
+              <option>Rejected</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Notes</label>
+
+            <textarea
+              id="notesInput"
+              placeholder="Application notes..."
+            ></textarea>
+          </div>
+
+          <button class="generate-btn" id="saveJobBtn">
+            Save Application
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="builder-right">
+
+        <div class="insight-panel">
+
+          <div>
+            <p class="insight-label">Applications</p>
+            <h2 id="totalApplications">0</h2>
+          </div>
+
+          <div>
+            <p class="insight-label">Interviews</p>
+            <h2 id="totalInterviews">0</h2>
+          </div>
+
+          <div>
+            <p class="insight-label">Offers</p>
+            <h2 id="totalOffers">0</h2>
+          </div>
+
+        </div>
+
+        <div id="jobList" class="cv-grid">
+          <p>Loading jobs...</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/jobs.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Salary Path - JobReady</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">JobReady</div>
+
+    <div class="nav-links">
+      <a href="builder.html">Builder</a>
+      <a href="my-cvs.html">My CVs</a>
+      <a href="interview.html">Interview Prep</a>
+      <a href="salary.html">Salary Path</a>
+    </div>
+
+    <button class="nav-btn" id="logoutBtn">Logout</button>
+  </nav>
+
+  <section class="dashboard-section">
+
+    <div class="dashboard-header">
+      <div>
+        <h1>Salary & Career Path</h1>
+        <p>Explore salary progression, earning potential, and skills needed for your target role.</p>
+      </div>
+    </div>
+
+    <div class="builder-container">
+
+      <div class="builder-left">
+
+        <div class="panel-card">
+
+          <h3>Check Your Earning Potential</h3>
+
+          <p>Enter a role and JobReady will estimate salary progression from junior to senior level.</p>
+
+          <div class="form-group">
+            <label>Target Job Role</label>
+            <input id="jobRoleInput" type="text" placeholder="Software Developer">
+          </div>
+
+          <div class="form-group">
+            <label>Location</label>
+            <input id="locationInput" type="text" placeholder="London, UK">
+          </div>
+
+          <div class="form-group">
+            <label>Current Level</label>
+            <input id="experienceInput" type="text" placeholder="School leaver / Junior / Mid-level">
+          </div>
+
+          <div class="form-group">
+            <label>Your Current Skills</label>
+            <textarea id="skillsInput" placeholder="Communication, coding basics, customer service..."></textarea>
+          </div>
+
+          <button class="generate-btn" id="salaryBtn">
+            Analyse Salary Path
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="builder-right">
+
+        <div class="insight-panel">
+
+          <div>
+            <p class="insight-label">Junior</p>
+            <h2 id="juniorSalary">-</h2>
+          </div>
+
+          <div>
+            <p class="insight-label">Mid-Level</p>
+            <h2 id="midSalary">-</h2>
+          </div>
+
+          <div>
+            <p class="insight-label">Senior</p>
+            <h2 id="seniorSalary">-</h2>
+          </div>
+
+        </div>
+
+        <div class="panel-card">
+          <h3 id="salaryRoleTitle">Career Report</h3>
+
+          <div id="salaryOutput">
+            <p>Enter a role to see salary progression, career growth, and skills needed.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script type="module" src="/js/salary.js"></script>
+
+</body>
+
+</html>
