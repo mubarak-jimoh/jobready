@@ -1,6 +1,6 @@
 # JobReady
 
-[![CI](https://github.com/Mubarakjk/jobready/actions/workflows/ci.yml/badge.svg)](https://github.com/Mubarakjk/jobready/actions/workflows/ci.yml)
+[![CI](https://github.com/mubarak-jimoh/jobready/actions/workflows/ci.yml/badge.svg)](https://github.com/mubarak-jimoh/jobready/actions/workflows/ci.yml)
 
 An AI career platform for UK job seekers. Build a CV, score it the way a recruiter would, tailor it to a job advert, practise interviews and track applications, all in one place.
 
@@ -76,7 +76,7 @@ tests/e2e/       Playwright page-load tests
 You need Node.js 20 or newer, plus your own OpenAI, Stripe (test mode) and Supabase keys.
 
 ```bash
-git clone https://github.com/Mubarakjk/jobready.git
+git clone https://github.com/mubarak-jimoh/jobready.git
 cd jobready
 npm install
 cp .env.example .env
